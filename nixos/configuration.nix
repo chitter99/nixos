@@ -75,6 +75,13 @@
      rofi-wayland
      mako
      pulseaudio
+     fishPlugins.done
+     fishPlugins.fzf-fish
+     fishPlugins.forgit
+     fishPlugins.hydro
+     fzf
+     fishPlugins.grc
+     grc
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
