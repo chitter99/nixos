@@ -57,6 +57,9 @@
     ];
   };
 
+  # Don't need sudo password
+  security.sudo.wheelNeedsPassword = false;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -82,7 +85,13 @@
      fzf
      fishPlugins.grc
      grc
+     cliphist
+     ranger
+     pcmanfm
   ];
+
+  # Auto mount devices
+  services.gvfs.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
