@@ -102,6 +102,9 @@
   programs.hyprland.enable = true;
   xdg.portal.enable = true;
   
+  # Fish shell
+  programs.fish.enable = true;
+
   # PipeWire
   sound.enable = true;
   security.rtkit.enable = true;
