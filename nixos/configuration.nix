@@ -4,6 +4,10 @@
 
 { config, pkgs, ... }:
 
+let
+  stable = import <nixos-stable> { config = { allowUnfree = true;  }; };
+  unstable = import <nixos-unstable> { config = { allowUnfree = true; }; };
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -61,8 +65,11 @@
       firefox
       neofetch
       vscode
+      onedrive
+      obsidian
     ];
   };
+  security.pam.services.swaylock = {};
 
   # Don't need sudo password
   security.sudo.wheelNeedsPassword = false;
@@ -79,11 +86,15 @@
      kitty
      hyprland
      xdg-desktop-portal-hyprland
+     xdg-desktop-portal-gtk
+     wlroots
      greetd.tuigreet 
      waybar
      hyprpaper
      rofi-wayland
      mako
+     swaylock
+     swayidle
      pulseaudio
      fishPlugins.done
      fishPlugins.fzf-fish
@@ -110,13 +121,21 @@
 
   # List services that you want to enable:
   
+  #services.xserver = {
+  #  enable = true;
+  #  displayManager.gdm = {
+  #    enable = true;
+  #    wayland = true;
+  #  };
+  #};
+  hardware.opengl.enable = true;
+ 
   # Enable display manager
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%I:%M %p | %a • %h | %F' --cmd Hyprland";
-        user = "greeter";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -c ${pkgs.hyprland}/bin/Hyprland";
       };
     };
   };
@@ -124,10 +143,12 @@
   # Hyprland
   programs.hyprland = {
     enable = true;
-    xwayland = {
-      enable = true;
-      hidpi = true;
-    };
+    xwayland.enable = true;
+    xwayland.hidpi = true;
+    #package = unstable.hyprland.overwrite {
+    #  enable = true;
+    #  xwayland.enable = true;
+    #};
   };
   xdg.portal.enable = true;
   
