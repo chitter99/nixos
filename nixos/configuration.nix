@@ -19,8 +19,8 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Flakes
-  #nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Features
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   networking.hostName = "arsch-nixos-lenovo"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -74,6 +74,17 @@ in
   # Polkit
   security.polkit.enable = true;
 
+  # Yubikey
+  services.udev.packages = [ pkgs.yubikey-personalization ];
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.arsch = {
     isNormalUser = true;
@@ -88,11 +99,16 @@ in
       unstable.obsidian
       ungoogled-chromium
       spotify
+      shotman
+      slurp
+      gimp
     ];
   };
   
   # Required
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = {
+    u2fAuth = true;
+  };
 
   # Don't need sudo password
   security.sudo.wheelNeedsPassword = false;
@@ -135,6 +151,11 @@ in
      vlc
      xdg-utils
      polkit-kde-agent
+     yubikey-personalization
+     yubikey-personalization-gui
+     yubikey-manager
+     yubikey-manager-qt
+     yubikey-touch-detector
   ];
 
   # Auto mount devices
@@ -196,6 +217,9 @@ in
 
   # Fish shell
   programs.fish.enable = true;
+
+  # Direnv
+  programs.direnv.enable = true;
 
   # PipeWire
   sound.enable = true;
