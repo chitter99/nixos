@@ -11,6 +11,7 @@ in
 {
   imports =
     [ # Include the results of the hardware scan.
+      <nixos-hardware/lenovo/yoga/6/13ALC6>
       ./hardware-configuration.nix
     ];
 
@@ -30,6 +31,16 @@ in
 
   # Enable networking
   networking.networkmanager.enable = true;
+  
+  # Screen brigthness
+  programs.light.enable = true;
+  services.actkbd = {
+    enable = true;
+    bindings = [
+      { keys = [ 224 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -A 10"; }
+      { keys = [ 225 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/light -U 10"; }
+    ];
+  };
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -64,9 +75,11 @@ in
     packages = with pkgs; [
       firefox
       neofetch
-      vscode
+      neovim
+      unstable.vscode
       onedrive
-      obsidian
+      unstable.obsidian
+      ungoogled-chromium
     ];
   };
   security.pam.services.swaylock = {};
@@ -77,6 +90,9 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Enable ozone
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -89,7 +105,7 @@ in
      xdg-desktop-portal-gtk
      wlroots
      greetd.tuigreet 
-     waybar
+     unstable.waybar
      hyprpaper
      rofi-wayland
      mako
@@ -106,6 +122,8 @@ in
      cliphist
      ranger
      pcmanfm
+     vlc
+     xdg-utils
   ];
 
   # Auto mount devices
@@ -129,7 +147,7 @@ in
   #  };
   #};
   hardware.opengl.enable = true;
- 
+
   # Enable display manager
   services.greetd = {
     enable = true;
@@ -152,6 +170,19 @@ in
   };
   xdg.portal.enable = true;
   
+  # Neovim
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    defaultEditor = true;
+    configure = {
+      customRC = ''
+      set number
+      '';
+    };
+  };
+
   # Fish shell
   programs.fish.enable = true;
 
@@ -171,6 +202,15 @@ in
   programs._1password-gui = {
     enable = true;
     polkitPolicyOwners = ["arsch"];
+  };
+
+  services.transmission = { 
+    enable = true; #Enable transmission daemon
+    openRPCPort = true; #Open firewall for RPC
+    settings = { #Override default settings
+      rpc-bind-address = "0.0.0.0"; #Bind to own IP
+      rpc-whitelist = "127.0.0.1,10.0.0.1"; #Whitelist your remote machine (10.0.0.1 in this example)
+    };
   };
 
   # Enable the OpenSSH daemon.
