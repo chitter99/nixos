@@ -71,6 +71,9 @@ in
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];  
   
+  # Polkit
+  security.polkit.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.arsch = {
     isNormalUser = true;
@@ -87,6 +90,8 @@ in
       spotify
     ];
   };
+  
+  # Required
   security.pam.services.swaylock = {};
 
   # Don't need sudo password
@@ -129,6 +134,7 @@ in
      pcmanfm
      vlc
      xdg-utils
+     polkit-kde-agent
   ];
 
   # Auto mount devices
@@ -206,7 +212,7 @@ in
   programs._1password.enable = true;
   programs._1password-gui = {
     enable = true;
-    polkitPolicyOwners = ["arsch"];
+    polkitPolicyOwners = [ "arsch" ];
   };
 
   services.transmission = { 
