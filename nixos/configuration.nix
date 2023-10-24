@@ -31,7 +31,11 @@ in
 
   # Enable networking
   networking.networkmanager.enable = true;
-  
+
+  # Spotify firewall rules
+  networking.firewall.allowedTCPPorts = [ 57621 ];
+  networking.firewall.allowedUDPPorts = [ 5353 ];
+
   # Screen brigthness
   programs.light.enable = true;
   services.actkbd = {
@@ -76,10 +80,11 @@ in
       firefox
       neofetch
       neovim
-      unstable.vscode
+      vscode
       onedrive
       unstable.obsidian
       ungoogled-chromium
+      spotify
     ];
   };
   security.pam.services.swaylock = {};
