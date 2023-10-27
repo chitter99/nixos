@@ -102,12 +102,18 @@ in
       shotman
       slurp
       gimp
+      thunderbird
+      microsoft-edge
     ];
   };
   
   # Required
   security.pam.services.swaylock = {
     u2fAuth = true;
+  };
+
+  programs.seahorse = {
+    enable = true;
   };
 
   # Don't need sudo password
@@ -156,6 +162,10 @@ in
      yubikey-manager
      yubikey-manager-qt
      yubikey-touch-detector
+     unstable._1password
+     unstable._1password-gui
+     sshfs
+     curlftpfs
   ];
 
   # Auto mount devices
@@ -219,7 +229,10 @@ in
   programs.fish.enable = true;
 
   # Direnv
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    silent = true;
+  };
 
   # PipeWire
   sound.enable = true;
@@ -233,10 +246,14 @@ in
   };
 
   # 1password
-  programs._1password.enable = true;
+  programs._1password = {
+    enable = true;
+    package = unstable._1password;
+  };
   programs._1password-gui = {
     enable = true;
     polkitPolicyOwners = [ "arsch" ];
+    package = unstable._1password-gui;
   };
 
   services.transmission = { 
