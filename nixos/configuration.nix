@@ -11,7 +11,7 @@ in
 {
   imports =
     [ # Include the results of the hardware scan.
-      <nixos-hardware/lenovo/yoga/6/13ALC6>
+      #<nixos-hardware/lenovo/yoga/6/13ALC6>
       ./hardware-configuration.nix
     ];
 
@@ -95,7 +95,6 @@ in
       neofetch
       neovim
       vscode
-      onedrive
       unstable.obsidian
       ungoogled-chromium
       spotify
@@ -104,6 +103,7 @@ in
       gimp
       thunderbird
       microsoft-edge
+      rclone
     ];
   };
   
@@ -112,9 +112,9 @@ in
     u2fAuth = true;
   };
 
-  programs.seahorse = {
-    enable = true;
-  };
+  #programs.seahorse = {
+  #  enable = true;
+  #};
 
   # Don't need sudo password
   security.sudo.wheelNeedsPassword = false;
@@ -166,6 +166,8 @@ in
      unstable._1password-gui
      sshfs
      curlftpfs
+     brightnessctl
+     fuse
   ];
 
   # Auto mount devices
@@ -191,14 +193,23 @@ in
   hardware.opengl.enable = true;
 
   # Enable display manager
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet -c ${pkgs.hyprland}/bin/Hyprland";
-      };
-    };
-  };
+  #services.greetd = {
+  #  enable = true;
+  #  settings = {
+  #    default_session = {
+  #      command = "${pkgs.greetd.tuigreet}/bin/tuigreet -c ${pkgs.hyprland}/bin/Hyprland";
+  #    };
+  #  };
+  #};
+
+  # Gnome
+  services.xserver.enable = true;
+  #services.xserver.displayManager.gdm.enable = true;
+  #services.xserver.displayManager.gdm.wayland = true;
+  services.xserver.displayManager.defaultSession = "hyprland";
+  #services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Hyprland
   programs.hyprland = {
@@ -212,6 +223,21 @@ in
   };
   xdg.portal.enable = true;
   
+  # rclone systemd service
+  systemd.user.services.rclone-mount-onedrive-brain = {
+    wantedBy = ["graphical-session.target"];
+    partOf = ["graphical-session.target"];
+    after = ["network.target"];
+    description = "Mount brain onedrive folder to user home.";
+    serviceConfig = {
+      Type = "notify";
+      ExecStartPre = "/run/current-system/sw/bin/mkdir -p /home/arsch/onedrive/brain";
+      ExecStart = "${pkgs.rclone}/bin/rclone mount --vfs-cache-mode writes onedrive-aaron@clab.rocks:Brain/ /home/arsch/onedrive/brain";
+      ExecStop = "fusermount -u /home/arsch/onedrive/brain";
+      Environment = [ "PATH=${pkgs.fuse}/bin:/run/wrappers/bin/:$PATH" ];
+    };
+  };
+
   # Neovim
   programs.neovim = {
     enable = true;
@@ -236,6 +262,7 @@ in
 
   # PipeWire
   sound.enable = true;
+  hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
