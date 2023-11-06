@@ -39,6 +39,10 @@ bind = $mainMod, j, togglesplit, # dwindle
 bind = $mainMod, 0, exec, swaylock
 bind = $mainMod, s, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +'%Y%m%d_%H%M%S').png
 
+# Screen backlight
+bind = , XF86MonBrightnessUp, exec, brightnessctl set +2%
+bind = , XF86MonBrightnessDown, exec, brightnessctl set 2%-
+
 $w1 = hyprctl hyprpaper wallpaper "eDP-1, ~/.config/backgrounds/232136.png"
 $w2 = hyprctl hyprpaper wallpaper "eDP-1, ~/.config/backgrounds/1A1C23.png"
 $w3 = hyprctl hyprpaper wallpaper "eDP-1, ~/.config/backgrounds/232136.png"
@@ -47,33 +51,36 @@ $w5 = hyprctl hyprpaper wallpaper "eDP-1, ~/.config/backgrounds/232136.png"
 $w6 = hyprctl hyprpaper wallpaper "eDP-1, ~/.config/backgrounds/232136.png"
 $w7 = hyprctl hyprpaper wallpaper "eDP-1, ~/.config/backgrounds/232136.png"
 
-$wA = Alpha
-$wB = Bravo
-$wC = Charlie
-$wD = Delta
-$wE = Echo
-$wF = Foxtrot
-$wG = Golf
-$wH = Hotel
+$wA = 1
+$wB = 2
+$wC = 3
+$wD = 4
+$wE = 5
+$wF = 6
+$wG = 7
+$wH = 9
 $wI = are ya lost bud
 
 # for all categories, see https://wiki.hyprland.org/configuring/variables/
 input {
-	kb_layout = us
+	kb_layout = ch
 	follow_mouse = 1
 	touchpad {
-		natural_scroll = no
+		natural_scroll = yes
 	}
-	sensitivity = -0.1 # -1.0 - 1.0, 0 means no modification.
+	sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 }
 
 general {
 	gaps_in = 5
 	gaps_out = 10
 	border_size = 2
+
 	col.active_border = rgba(0D599Fee) rgba(ffffffee) 45deg
 	col.inactive_border = rgba(595959aa)
+	
 	layout = dwindle
+	
 	cursor_inactive_timeout = 15
 	no_cursor_warps = yes
 	resize_on_border = yes
@@ -81,33 +88,38 @@ general {
 }
 
 decoration {
-	rounding = 10
+	rounding = 2.5
+	
 	drop_shadow = yes
+	
 	shadow_range = 4
 	shadow_render_power = 3
 	col.shadow = rgba(1a1a1aee)
+
 	active_opacity = 1.0
 	inactive_opacity = 1.0
 	fullscreen_opacity = 1.0
+	
 	blur {
 		enabled = yes
 		size = 8
 		passes = 3
 		new_optimizations = true
 		xray = true
-		}
+	}
 }
 
 animations {
 	enabled = yes
-	bezier = snappybezier, 0.4, 0.0, 0.2, 1.0
-	bezier = smoothbezier, 0.25, 0.1, 0.25, 1.0
-	animation = windows, 1, 7, snappybezier
-	animation = windowsOut, 1, 7, snappybezier, popin 85%
-	animation = border, 1, 10, snappybezier
-	animation = borderangle, 1, 8, smoothbezier
-	animation = fade, 1, 7, smoothbezier
-	animation = workspaces, 1, 6, smoothbezier
+	
+	bezier = easeOutQuad, 0.5, 1.0, 0.89, 1.0
+	
+	animation = windows, 1, 7, easeOutQuad
+	animation = windowsOut, 1, 7, easeOutQuad, popin 85%
+	animation = border, 1, 10, easeOutQuad
+	animation = borderangle, 1, 8, easeOutQuad
+	animation = fade, 1, 7, easeOutQuad
+	animation = workspaces, 1, 6, easeOutQuad
 }
 
 dwindle {
@@ -144,65 +156,24 @@ bind = $mainMod shift, right, movewindow, r
 bind = $mainMod shift, up, movewindow, u
 bind = $mainMod shift, down, movewindow, d
 
-
-workspace=name:$wA,monitor:eDP-1,default:true
-workspace=name:$wB,monitor:eDP-1
-workspace=name:$wC,monitor:eDP-1
-workspace=name:$wD,monitor:eDP-1
-workspace=name:$wE,monitor:eDP-1
-workspace=name:$wF,monitor:eDP-1
-workspace=name:$wG,monitor:eDP-1
-workspace=name:$wH,monitor:eDP-1
-workspace=name:$wI,monitor:eDP-1
-
 bind = $mainMod, 1, workspace, name:$wA
-bind = $mainMod, 1, exec,$w1
-
 bind = $mainMod, 2, workspace, name:$wB
-bind = $mainMod, 2, exec,$w2
-
 bind = $mainMod, 3, workspace, name:$wC
-bind = $mainMod, 3, exec,$w3
-
 bind = $mainMod, 4, workspace, name:$wD
-bind = $mainMod, 4, exec,$w4
-
 bind = $mainMod, 5, workspace, name:$wE
-bind = $mainMod, 5, exec,$w5
-
 bind = $mainMod, 6, workspace, name:$wF
-bind = $mainMod, 6, exec,$w6
-
 bind = $mainMod, 7, workspace, name:$wG
-bind = $mainMod, 7, exec,$w7
-
 bind = $mainMod, 8, workspace, name:$wH
-
 bind = $mainMod, 9, workspace, name:$wI
 
 bind = $mainMod SHIFT, 1, movetoworkspace,name:$wA
-bind = $mainMod SHIFT, 1, exec,$w1
-
 bind = $mainMod SHIFT, 2, movetoworkspace,name:$wB
-bind = $mainMod SHIFT, 2, exec,$w2
-
 bind = $mainMod SHIFT, 3, movetoworkspace,name:$wC
-bind = $mainMod SHIFT, 3, exec,$w3
-
 bind = $mainMod SHIFT, 4, movetoworkspace,name:$wD
-bind = $mainMod SHIFT, 4, exec,$w4
-
 bind = $mainMod SHIFT, 5, movetoworkspace,name:$wE
-bind = $mainMod SHIFT, 5, exec,$w5
-
 bind = $mainMod SHIFT, 6, movetoworkspace,name:$wF
-bind = $mainMod SHIFT, 6, exec,$w6
-
 bind = $mainMod SHIFT, 7, movetoworkspace,name:$wG
-bind = $mainMod SHIFT, 7, exec,$w7
-
 bind = $mainMod SHIFT, 8, movetoworkspace,name:$wH
-
 bind = $mainMod SHIFT, 9, movetoworkspace, name:$wI
 
 bind = $mainMod, mouse_down, workspace, e+1

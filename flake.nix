@@ -58,6 +58,7 @@
         } // attrs;        
         modules = [
               ./.
+              ./modules/toys
           ];
     };#nixos-arsch-lenovo
 

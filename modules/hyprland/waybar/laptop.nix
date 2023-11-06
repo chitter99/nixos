@@ -4,27 +4,27 @@
     home.file = {
       ".config/waybar/config.jsonc".text = ''
 {
-"layer": "top",
-"height": 45,
+	"layer": "top",
+	"height": 45,
 	"modules-left": ["custom/nix", "cpu", "memory", "disk"],
-"modules-center": ["hyprland/workspaces"],
+	"modules-center": ["hyprland/workspaces"],
 	"modules-right": [ "pulseaudio", "backlight", "network", "battery", "clock"],
 	"custom/nix": {
-	"format": " ",
-	"tooltip": false,
-	"on-click": "/run/current-system/sw/bin/wofi --show drun"
-},
-	"hyprland/workspaces": {
-	"format": "{name} {icon}",
-	"tooltip": false,
-	"all-outputs": true,
-	"format-icons": {
-		"active": "",
-		"default": ""
+		"format": " ",
+		"tooltip": false,
+		"on-click": "/run/current-system/sw/bin/wofi --show drun"
 	},
-	"on-scroll-up": "hyprctl dispatch workspace e-1",
-	"on-scroll-down": "hyprctl dispatch workspace e+1",
-	"on-click": "activate"
+	"hyprland/workspaces": {
+		"format": "{name}",
+		"tooltip": false,
+		"all-outputs": true,
+		"format-icons": {
+			"active": "",
+			"default": ""
+		},
+		"on-scroll-up": "hyprctl dispatch workspace e+1",
+		"on-scroll-down": "hyprctl dispatch workspace e-1",
+		"on-click": "activate"
 	},
 	"cpu": {
 		"format": "󰻠 {usage}%",

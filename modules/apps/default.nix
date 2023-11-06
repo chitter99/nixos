@@ -4,6 +4,7 @@
     ./1password
     ./browsing
     ./vscode
+    ./rlcone
   ];
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
