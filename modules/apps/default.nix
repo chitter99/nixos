@@ -3,8 +3,8 @@
   imports = [ 
     ./1password
     ./browsing
+    ./rclone
     ./vscode
-    ./rlcone
   ];
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
