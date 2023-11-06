@@ -2,6 +2,7 @@
 
 let
   rcloneMountArgs = ''
+  --vfs-cache-mode full \
   --dir-cache-time 48h \
   --vfs-cache-max-age 48h \
   --vfs-read-chunk-size 10M \
@@ -30,7 +31,7 @@ in
         Type = "notify";
         Restart = "always";
         RestartSec = "10s";
-        Environment = [ "PATH=${pkgs.fuse}/bin:$PATH" ];
+        Environment = [ "PATH=${pkgs.fuse}/bin:/run/wrappers/bin/:$PATH" ];
       };
     };
   };
