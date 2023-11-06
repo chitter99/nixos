@@ -17,13 +17,15 @@
     extraGroups = [ "networkmanager" ];
   };
   # Set your time zone.
-  time.timeZone = "America/Toronto";
+  time.timeZone = "Europe/Zurich";
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_CA.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
     
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    layout = "ch";
+    xkbVariant = "de_nodeadkeys";
   };
+
+  console.keyMap = "sg";
 }
