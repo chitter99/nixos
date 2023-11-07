@@ -8,10 +8,11 @@
         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd Hyprland";
         user = username;
       };
-      initial_session = {
-        command = "Hyprland";
-        user = username;
-      };
+# Uncomment for passwordless login
+#      initial_session = {
+#        command = "Hyprland";
+#        user = username;
+#      };
     };
   };
 }

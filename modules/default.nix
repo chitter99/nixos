@@ -5,5 +5,7 @@
     ./core
     ./hardware
     ./hyprland
+    ./themes
+    ./gnome
   ];
 }

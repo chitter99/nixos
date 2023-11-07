@@ -27,13 +27,13 @@ env=ozone-platform-hint,auto
 
 $mainMod = SUPER
 
-bind = $mainMod, q, exec, foot 
+bind = $mainMod, q, exec, kitty -e fish 
 bind = $mainMod, w, killactive, 
 bind = $mainMod, f, fullscreen, 1
 bind = $mainMod, d, exec, pavucontrol
 bind = $mainMod, m, exit, 
 bind = $mainMod, e, exec, kitty -e ranger
-bind = $mainMod, b, exec, foot -e btop
+bind = $mainMod, b, exec, kitty -e btop
 bind = $mainMod, v, togglefloating, 
 bind = $mainMod, r, exec, wofi --show drun
 bind = $mainMod, p, pseudo, # dwindle

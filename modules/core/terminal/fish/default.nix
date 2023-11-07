@@ -6,10 +6,9 @@
   home-manager.users.${username} = {
     programs.fish = {
       enable = true;
-    };
-    home.file = {
-      ".config/fish/config.fish" = ''
-starship init fish | source
+      shellInit = ''
+# Here would be the place for op/plugin.sh
+set -g fish_greeting
       '';
     };
   };
