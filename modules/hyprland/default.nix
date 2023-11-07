@@ -29,6 +29,7 @@ in
     wl-clipboard
     # Required if applications are having trouble opening links
     xdg-utils
+    xdg-desktop-portal-gtk
   ];
   
   programs.hyprland.enable = true;

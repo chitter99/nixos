@@ -5,10 +5,10 @@
       ".config/waybar/config.jsonc".text = ''
 {
 	"layer": "top",
-	"height": 45,
-	"modules-left": ["custom/nix", "cpu", "memory", "disk"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": [ "pulseaudio", "backlight", "network", "battery", "clock"],
+	"height": 30,
+	"modules-left": [ "custom/nix", "hyprland/workspaces" ],
+	"modules-center": [ "hyprland/window" ],
+	"modules-right": [ "pulseaudio", "backlight", "network", "cpu", "memory", "disk", "bluetooth", "battery", "clock"],
 	"custom/nix": {
 		"format": " ",
 		"tooltip": false,
@@ -100,11 +100,11 @@
 		"on-click": "pavucontrol"
 	}, 
 	"bluetooth": {
-	"format": "<span color='#0056A3'></span> {status}",
-	"format-disabled": "", // an empty format will hide the module
-	"format-connected": "<span color='#0056A3'></span> {num_connections}",
-	"tooltip-format": "{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}   {device_address}"      
+		"format": "<span color='#0056A3'></span> {status}",
+		"format-disabled": "", // an empty format will hide the module
+		"format-connected": "<span color='#0056A3'></span> {num_connections}",
+		"tooltip-format": "{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}   {device_address}"      
 	},
 	"network": {
 		"interface": "wlp*",
@@ -127,20 +127,20 @@
 		"interval": 2
 	},
 	"battery": {
-	"states": {
-			"good": 100,
-			"warning": 30,
-			"critical": 10
-		},
-	"format": "{icon} {capacity}%",
-	"format-charging": " {capacity}%",
-	"format-plugged": " {capacity}%",
-	"format-alt": "{icon} {time}",
-		// "format-good": "", // An empty format will hide the module
-	"format-full": " {capacity}%",
-	"format-icons": [" ", " ", " ", " ", " ", " "],
-	"format-charging": "<span color='#2da14c'> </span> {capacity}%",
-	"interval": 2
+		"states": {
+				"good": 100,
+				"warning": 30,
+				"critical": 10
+			},
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{icon} {time}",
+			// "format-good": "", // An empty format will hide the module
+		"format-full": " {capacity}%",
+		"format-icons": [" ", " ", " ", " ", " ", " "],
+		"format-charging": "<span color='#2da14c'> </span> {capacity}%",
+		"interval": 2
 	},
 	"custom/power": {
 		"format": "{}",

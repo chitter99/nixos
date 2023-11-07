@@ -20,7 +20,10 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
  
-  
+  programs.direnv = {
+    enable = true;
+    silent = true;
+  };  
 
   environment.systemPackages = corePackages ++ devPackages;
   

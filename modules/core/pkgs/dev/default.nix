@@ -12,5 +12,6 @@ with pkgs; [
   postgresql_15
   python312
   zig
+  vscode
 ]
 

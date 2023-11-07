@@ -6,6 +6,7 @@
     ./foot
     ./kitty
     ./nvim
+    ./fish
     ./starship
    ];
    # ---- Home Configuration ----

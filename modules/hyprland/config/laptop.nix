@@ -22,6 +22,8 @@ env=XDG_SESSION_DESKTOP,Hyprland
 env=XDG_SESSION_TYPE,wayland
 env=GDK_BACKEND,wayland,x11
 env=QT_QPA_PLATFORM,wayland
+env=OBSIDIAN_USE_WAYLAND,1
+env=ozone-platform-hint,auto
 
 $mainMod = SUPER
 
@@ -37,7 +39,8 @@ bind = $mainMod, r, exec, wofi --show drun
 bind = $mainMod, p, pseudo, # dwindle
 bind = $mainMod, j, togglesplit, # dwindle
 bind = $mainMod, 0, exec, swaylock
-bind = $mainMod, s, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +'%Y%m%d_%H%M%S').png
+bind = $mainMod, s, exec, grim -g "$(slurp)" - | wl-copy
+bind = $mainMod SHIFT, s, exec, grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +'%Y%m%d_%H%M%S').png
 
 # Screen backlight
 bind = , XF86MonBrightnessUp, exec, brightnessctl set +2%

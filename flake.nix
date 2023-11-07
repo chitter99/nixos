@@ -9,9 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprland = {
-      url = "github:hyprwm/hyprland";
-    };
+    hyprland.url = "github:hyprwm/hyprland";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
   
   # Defining flake import structure for packages
