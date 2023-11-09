@@ -3,16 +3,23 @@
   home-manager.users.${username} =  { ... }: {
     home.file = {
       ".config/hypr/hyprpaper.conf".text = ''
-preload = ~/.config/backgrounds/232136.png
-preload = ~/.config/backgrounds/1A1C23.png
-wallpaper = eDP-1, ~/.config/backgrounds/232136.png
+preload = ~/.config/backgrounds/3297593.jpg
+preload = ~/.config/backgrounds/911738.jpg
+
+wallpaper = eDP-1, ~/.config/backgrounds/3297593.jpg
+wallpaper = DP-1, ~/.config/backgrounds/911738.jpg
       '';  
 
       ".config/hypr/hyprland.conf".text = ''
 #monitor=edp-1,3840 x 2160,auto,auto
 monitor=,preferred,auto,auto
+monitor=eDP-1,preferred,auto,auto
+monitor=desc:AOC U34G2G4R3 0x0000025C,2560x1080@60,auto,auto
 
 exec-once = hyprpaper & waybar & mako & lxqt-policykit-agent & dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+# theme settings
+exec-once = hyprctl setcursor Bibata-Modern-Classic 24
 
 # some default env vars.
 env=BROWSER, firefox
@@ -64,6 +71,9 @@ $wG = 7
 $wH = 9
 $wI = are ya lost bud
 
+# xray windows
+#windowrulev2 = opacity 0.9 override 0.7 override,class:^(fish|kitty|bash|foot)$
+
 # for all categories, see https://wiki.hyprland.org/configuring/variables/
 input {
 	kb_layout = ch
@@ -79,8 +89,8 @@ general {
 	gaps_out = 10
 	border_size = 2
 
-	col.active_border = rgba(0D599Fee) rgba(ffffffee) 45deg
-	col.inactive_border = rgba(595959aa)
+	col.active_border = rgb(E0E1DD) rgb(778DA9) 45deg
+	col.inactive_border = rgb(0D1B2A) rgb(1B263B) 45deg
 	
 	layout = dwindle
 	
@@ -99,9 +109,9 @@ decoration {
 	shadow_render_power = 3
 	col.shadow = rgba(1a1a1aee)
 
-	active_opacity = 1.0
-	inactive_opacity = 1.0
-	fullscreen_opacity = 1.0
+	active_opacity = 0.9
+	inactive_opacity = 0.75
+	fullscreen_opacity = 0.9
 	
 	blur {
 		enabled = yes

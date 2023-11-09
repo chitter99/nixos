@@ -3,7 +3,7 @@
   home-manager.users.${username} =  { ... }: {
     home.file = {
       ".config/kitty/kitty.conf".text = ''
-background #232136
+background #0F0F0F
 background_opacity 1.0
       '';     
     };

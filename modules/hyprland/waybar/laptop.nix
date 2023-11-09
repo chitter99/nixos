@@ -5,9 +5,9 @@
       ".config/waybar/config.jsonc".text = ''
 {
 	"layer": "top",
-	"height": 30,
+	"height": 36,
 	"modules-left": [ "custom/nix", "hyprland/workspaces" ],
-	"modules-center": [ "hyprland/window" ],
+	"modules-center": [ ],
 	"modules-right": [ "pulseaudio", "backlight", "network", "cpu", "memory", "disk", "bluetooth", "battery", "clock"],
 	"custom/nix": {
 		"format": " ",
@@ -27,13 +27,13 @@
 		"on-click": "activate"
 	},
 	"cpu": {
-		"format": "󰻠 {usage}%",
+		"format": "󰻠  {usage}%",
 		"tooltip": true,
 		"on-click": "foot sh -c 'btop'",
 		"interval": 2
 	},
 	"memory": {
-		"format": " {}%",
+		"format": "  {}%",
 		"tooltip": true,
 		"on-click": "foot sh -c 'btop'",
 		"interval": 2
@@ -49,18 +49,18 @@
 			"",
 			""
 		],
-		"interval": 2
+		"interval": 60
 	},
 	"disk": {
-		"format": " {percentage_used}% ({free})",
+		"format": "  {percentage_used}%",
 		"tooltip": true,
-		"interval": 2,
+		"interval": 60,
 		"on-click":"kitty sh -c 'ranger'"
 	},
 	"clock": {
-		"format": "  {:%d <small>%a</small> %H:%M}",
+		"format": "{:%H:%M}",
 		//"format": " {:%a %b %d %Y | %H:%M}",
-		"format-alt": "  {:%A %B %d %Y (%V) | %r}",
+		"format-alt": "{:%a %b %d %Y | %H:%M}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 		"calendar-weeks-pos": "right",
 		"today-format": "<span color='#f38ba8'><b><u>{}</u></b></span>",
@@ -70,12 +70,12 @@
 		"interval": 60
 	},    
 	"backlight": {
-	"device": "intel_backlight",
-	"format": "<span color='#2da14c'>{icon}</span> {percent}%",
-	"format-icons": ["", "", "", "", "", "", "", "", ""],
-	"on-scroll-up": "brightnessctl set +2%",
-	"on-scroll-down": "brightnessctl set 2%-",
-	"interval": 2
+		"device": "intel_backlight",
+		"format": "{icon} {percent}%",
+		"format-icons": ["", "", "", "", "", "", "", "", ""],
+		"on-scroll-up": "brightnessctl set +2%",
+		"on-scroll-down": "brightnessctl set 2%-",
+		"interval": 2
 	},
 	"pulseaudio": {
 		// "scroll-step": 1, // %, can be a float
@@ -100,15 +100,15 @@
 		"on-click": "pavucontrol"
 	}, 
 	"bluetooth": {
-		"format": "<span color='#0056A3'></span> {status}",
+		"format": " {status}",
 		"format-disabled": "", // an empty format will hide the module
-		"format-connected": "<span color='#0056A3'></span> {num_connections}",
+		"format-connected": " {num_connections}",
 		"tooltip-format": "{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}   {device_address}"      
 	},
 	"network": {
 		"interface": "wlp*",
-		"format": "󰱓 {bandwidthTotalBytes}",
+		"format": "󰱓 ",
 		"format-disconnected": "{icon} No Internet",
 		"format-linked": "󰅛 {ifname} (No IP)",
 		"format-alt": "󰛶 {bandwidthUpBytes} | 󰛴 {bandwidthDownBytes}",
@@ -133,13 +133,12 @@
 				"critical": 10
 			},
 		"format": "{icon} {capacity}%",
-		"format-charging": " {capacity}%",
-		"format-plugged": " {capacity}%",
+		"format-plugged": "  {capacity}%",
 		"format-alt": "{icon} {time}",
 			// "format-good": "", // An empty format will hide the module
-		"format-full": " {capacity}%",
+		"format-full": "  {capacity}%",
 		"format-icons": [" ", " ", " ", " ", " ", " "],
-		"format-charging": "<span color='#2da14c'> </span> {capacity}%",
+		"format-charging": "  {capacity}%",
 		"interval": 2
 	},
 	"custom/power": {
@@ -155,85 +154,39 @@
       ".config/waybar/style.css".text = ''
 * {
 	font-family: 'M+1Code Nerd Font';
+	
 	font-size: 16px;
-	min-height: 30px;
+
+	color: @theme_fg_color;
 }
 
 window#waybar {
 	background: transparent;
 }
 
-#workspaces {
-	background-color: transparent;
-	color: #0d74bd;
-	margin-top: 15px;
-	margin-right: 15px;
-	padding-top: 1px;
-	padding-left: 10px;
-	padding-right: 10px;
+window#waybar > * {
+	padding: 10px 10px;
 }
 
-#custom-nix {
-	background-color: transparent;
-	color: #0a60ab;
-	margin-top: 15px;
-	margin-right: 15px;
-	padding-top: 1px;
-	padding-left: 10px;
-	padding-right: 10px;
+.modules-right, .modules-left {
+	background-color: rgba(10, 10, 10, 0.5);
+	border-radius: 4px;
+}
+
+.modules-right > widget > *, .modules-left > widget > * {
+	padding: 0 5px;
 }
 
 #custom-nix {
 	font-size: 20px;
-	margin-left: 15px;
-	color: #0a60ab;
 }
 
 #workspaces button {
-	background: transparent;
-	color: #0d74bd;
+	padding: 6px 5px;
 }
 
-#cpu, #memory, #temperature, #disk, #clock, #backlight, #pulseaudio, #bluetooth, #network, #battery, #custom-power {
-	background-color: transparent;
-	color: #00ba69;
-	margin-top: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-right: 15px;
-}
-
-#cpu {
-	color: #FFD700;
-}
-
-#memory {
-	color: #008000;
-}
-
-#disk {
-	color: #A8A8A8;
-
-}
-
-#backlight, #bluetooth {
-	color: #0056A3;
-	padding-right: 5px;
-	margin-right: 0
-}
-
-#network {
-	color: #10a140;
-	padding-left: 5px;
-}
-
-#pulseaudio {
-	color: #ba23d9;
-	padding-left: 5px;
-}
-
-#clock {
-	color: #00ba69;
+#workspaces button.active label {
+	color: @theme_selected_fg_color;
 }
       '';
     };

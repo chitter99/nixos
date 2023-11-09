@@ -10,4 +10,5 @@ with pkgs; [
   unzip
   wget
   yubikey-manager 
+  spotify
 ]
