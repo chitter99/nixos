@@ -13,5 +13,6 @@ with pkgs; [
   python312
   zig
   vscode
+  mysql-workbench
 ]
 

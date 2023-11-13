@@ -23,7 +23,7 @@ in
       Unit = {
         Description = "mount onedrive dir";
       };
-      Install.WantedBy = [ "multi-user.target" ];
+      Install.WantedBy = [ "graphical-session.target" ];
       Service = {
         ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${mountOneDrive}";
         ExecStart = "${pkgs.rclone}/bin/rclone mount onedrive: ${mountOneDrive} \ ${rcloneMountArgs}";

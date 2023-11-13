@@ -12,4 +12,5 @@
       discord
      ];
   };
+  services.teamviewer.enable = true;
 }

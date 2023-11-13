@@ -11,10 +11,10 @@ wallpaper = DP-1, ~/.config/backgrounds/911738.jpg
       '';  
 
       ".config/hypr/hyprland.conf".text = ''
-#monitor=edp-1,3840 x 2160,auto,auto
-monitor=,preferred,auto,auto
-monitor=eDP-1,preferred,auto,auto
-monitor=desc:AOC U34G2G4R3 0x0000025C,2560x1080@60,auto,auto
+monitor=, preferred, auto, auto
+monitor=desc:AOC Q27G2G4 0x00001A29, 2560x1440, -2560x0, auto
+monitor=desc:AOC U34G2G4R3 0x0000025C, 2560x1080@60, -25600x0, auto
+monitor=eDP-1, preferred, 0x0, auto
 
 exec-once = hyprpaper & waybar & mako & lxqt-policykit-agent & dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
