@@ -1,8 +1,0 @@
-2023/11/05-19:59:15.745 4 Creating DB /home/arsch/.config/microsoft-edge/Default/Local Storage/leveldb since it was missing.
-2023/11/05-19:59:15.750 4 Reusing MANIFEST /home/arsch/.config/microsoft-edge/Default/Local Storage/leveldb/MANIFEST-000001
-2023/11/05-20:00:50.908 6 Level-0 table #5: started
-2023/11/05-20:00:50.910 6 Level-0 table #5: 48399 bytes OK
-2023/11/05-20:00:50.912 6 Delete type=0 #3
-2023/11/05-20:00:56.980 6 Level-0 table #7: started
-2023/11/05-20:00:56.982 6 Level-0 table #7: 52988 bytes OK
-2023/11/05-20:00:56.986 6 Delete type=0 #4
