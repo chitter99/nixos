@@ -14,5 +14,6 @@ with pkgs; [
   zig
   vscode
   mysql-workbench
+  mongodb-compass
 ]
 

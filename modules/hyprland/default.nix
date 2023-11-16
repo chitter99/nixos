@@ -30,6 +30,7 @@ in
     # Required if applications are having trouble opening links
     xdg-utils
     xdg-desktop-portal-gtk
+    xdg-desktop-portal-hyprland
   ];
   
   programs.hyprland.enable = true;

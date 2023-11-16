@@ -8,7 +8,7 @@
 	"height": 36,
 	"modules-left": [ "custom/nix", "hyprland/workspaces" ],
 	"modules-center": [ ],
-	"modules-right": [ "pulseaudio", "backlight", "network", "cpu", "memory", "disk", "bluetooth", "battery", "clock"],
+	"modules-right": [ "pulseaudio", "backlight", "network", "cpu", "memory", "disk", "battery", "tray", "clock"],
 	"custom/nix": {
 		"format": " ",
 		"tooltip": false,
@@ -147,6 +147,10 @@
 		"exec": "echo '{\"text\":\"⏻\",\"tooltip\":\"Power\"}'",
 		"return-type": "json",
 		"on-click": "sudo ~/.config/wlogout/launch.sh"
+	},
+	"tray": {
+		"icon-size": 21,
+		"spacing": 10
 	}
 }
       '';    

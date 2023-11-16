@@ -5,15 +5,17 @@
       ".config/hypr/hyprpaper.conf".text = ''
 preload = ~/.config/backgrounds/3297593.jpg
 preload = ~/.config/backgrounds/911738.jpg
+preload = ~/.config/backgrounds/5825599.jpg
 
 wallpaper = eDP-1, ~/.config/backgrounds/3297593.jpg
-wallpaper = DP-1, ~/.config/backgrounds/911738.jpg
+wallpaper = desc:AOC Q27G2G4 0x00001A29, ~/.config/backgrounds/911738.jpg
+wallpaper = desc:AOC U34G2G4R3 0x0000025C, ~/.config/backgrounds/5825599.jpg 
       '';  
 
       ".config/hypr/hyprland.conf".text = ''
 monitor=, preferred, auto, auto
 monitor=desc:AOC Q27G2G4 0x00001A29, 2560x1440, -2560x0, auto
-monitor=desc:AOC U34G2G4R3 0x0000025C, 2560x1080@60, -25600x0, auto
+monitor=desc:AOC U34G2G4R3 0x0000025C, 2560x1080@60, -2560x0, auto
 monitor=eDP-1, preferred, 0x0, auto
 
 exec-once = hyprpaper & waybar & mako & lxqt-policykit-agent & dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
