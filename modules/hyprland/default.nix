@@ -31,12 +31,13 @@ in
     xdg-utils
     xdg-desktop-portal-gtk
     xdg-desktop-portal-hyprland
+    libsForQt5.qt5.qtwayland
+    qt6.qtwayland
   ];
   
   programs.hyprland.enable = true;
   programs.dconf.enable = true;
   
-
   services.gnome = {
     gnome-keyring.enable = true;
   };

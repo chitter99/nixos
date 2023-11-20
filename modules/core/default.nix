@@ -25,6 +25,20 @@ in
     silent = true;
   };  
 
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      canon-cups-ufr2
+      cnijfilter2
+      gutenprint
+    ];
+  };
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
+
   environment.systemPackages = corePackages ++ devPackages;
   
   # Dont change.

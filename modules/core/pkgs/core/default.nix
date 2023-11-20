@@ -11,4 +11,8 @@ with pkgs; [
   wget
   yubikey-manager 
   spotify
+  system-config-printer
+  # Printing
+  cups
+  cups-filters
 ]

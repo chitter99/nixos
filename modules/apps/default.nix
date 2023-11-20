@@ -10,6 +10,7 @@
     home.packages = with pkgs; [
       obsidian
       discord
+      teamviewer
      ];
   };
   services.teamviewer.enable = true;

@@ -30,7 +30,7 @@ env=XDG_CURRENT_DESKTOP,Hyprland
 env=XDG_SESSION_DESKTOP,Hyprland
 env=XDG_SESSION_TYPE,wayland
 env=GDK_BACKEND,wayland,x11
-env=QT_QPA_PLATFORM,wayland
+env=QT_QPA_PLATFORM,wayland;xcb
 env=OBSIDIAN_USE_WAYLAND,1
 env=ozone-platform-hint,auto
 
