@@ -27,13 +27,15 @@ in
     lxqt.lxqt-policykit
     slurp
     wl-clipboard
-    # Required if applications are having trouble opening links
-    xdg-utils
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
     libsForQt5.qt5.qtwayland
     qt6.qtwayland
   ];
+
+  xdg = {
+    portal = {
+      enable = true;
+    };
+  };
   
   programs.hyprland.enable = true;
   programs.dconf.enable = true;
