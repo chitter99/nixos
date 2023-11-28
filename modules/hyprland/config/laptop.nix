@@ -18,7 +18,8 @@ monitor=desc:AOC Q27G2G4 0x00001A29, 2560x1440, -2560x0, auto
 monitor=desc:AOC U34G2G4R3 0x0000025C, 2560x1080@60, -2560x0, auto
 monitor=eDP-1, preferred, 0x0, auto
 
-exec-once = hyprpaper & waybar & mako & lxqt-policykit-agent & dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec-once = hyprpaper & waybar & mako & lxqt-policykit-agent
+#exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 
 # theme settings
 exec-once = hyprctl setcursor Bibata-Modern-Classic 24
