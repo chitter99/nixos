@@ -39,6 +39,15 @@ in
     openFirewall = true;
   };
 
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 80 443 9090 3000 ];
+    allowedUDPPortRanges = [
+      { from = 4000; to = 4007; }
+      { from = 8000; to = 8010; }
+    ];
+  };
+
   environment.systemPackages = corePackages ++ devPackages;
   
   # Dont change.

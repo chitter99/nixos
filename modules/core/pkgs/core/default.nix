@@ -15,4 +15,6 @@ with pkgs; [
   # Printing
   cups
   cups-filters
+  brave
+  rustdesk
 ]

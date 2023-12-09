@@ -15,5 +15,6 @@ with pkgs; [
   vscode
   mysql-workbench
   mongodb-compass
+  bruno
 ]
 
