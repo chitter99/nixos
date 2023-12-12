@@ -6,6 +6,7 @@
     ./rclone
     ./vscode
     ./helix
+    ./ledger
   ];
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
