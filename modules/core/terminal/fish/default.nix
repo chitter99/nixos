@@ -7,6 +7,8 @@
     programs.fish = {
       enable = true;
       shellInit = ''
+direnv hook fish | source
+
 # Here would be the place for op/plugin.sh
 set -g fish_greeting
 

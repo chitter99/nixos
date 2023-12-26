@@ -16,5 +16,6 @@ with pkgs; [
   mysql-workbench
   mongodb-compass
   bruno
+  rstudio
 ]
 
