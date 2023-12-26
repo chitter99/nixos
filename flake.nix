@@ -9,6 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware";
+
     hyprland.url = "github:hyprwm/hyprland";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
@@ -46,7 +48,7 @@
             ./.
           ];
     };#sisyphus
-# Appended new system
+    # Appended new system
     nixosConfigurations.nixos-arsch-lenovo = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
@@ -60,6 +62,18 @@
               ./modules/toys
           ];
     };#nixos-arsch-lenovo
-
+    # Hestia framework
+    nixosConfigurations.hestia = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+            username = "arsch";
+            hostname = "hestia";
+            displayConfig = "laptop";
+            nvidia_bool = "disabled";
+        } // attrs;        
+        modules = [
+              ./.
+              ./modules/toys
+          ];
   };
 }
