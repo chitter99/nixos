@@ -16,7 +16,7 @@
   };
   
   # Defining flake import structure for packages
-  outputs = { self, nixpkgs, ... } @ attrs: { 
+  outputs = { self, nixpkgs, nixos-hardware, ... } @ attrs: { 
     
     # Hyprland Desktop - 3 monitors 
     nixosConfigurations.retis = nixpkgs.lib.nixosSystem {
@@ -74,6 +74,8 @@
         modules = [
               ./.
               ./modules/toys
+              nixos-hardware.nixosModules.framework-13-7040-amd
           ];
+     };
   };
 }

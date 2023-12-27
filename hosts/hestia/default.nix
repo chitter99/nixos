@@ -1,4 +1,4 @@
-{ nixos-hardware, ... }: {
+{ nixos-hardware, lib, ... }: {
   # Config for framework laptop
   imports = [
     ./hardware-configuration.nix
@@ -15,10 +15,14 @@
       turbo = "auto";
     };
   };
+  
   # Framework amd 13inch specific hardware patches
-  modules = {
-    <nixos-hardware/framework/13-inch/7040-amd>
-  };
   services.fwupd.enable = true;
-  hardware.framework.amd-7040.preventWakeOnAC = true;
+  #hardware.framework.amd-7040.preventWakeOnAC = true;
+
+  #services.xserver = {
+  #  layout = lib.mkForce "us";
+  #};
+
+  #console.keyMap = lib.mkForce "us";
 }
