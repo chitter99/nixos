@@ -17,5 +17,7 @@ with pkgs; [
   mongodb-compass
   bruno
   rstudio
+  wireshark
+  wirelesstools
 ]
 
