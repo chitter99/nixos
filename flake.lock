@@ -253,16 +253,16 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1704194953,
-        "narHash": "sha256-RtDKd8Mynhe5CFnVT8s0/0yqtWFMM9LmCzXv/YKxnq4=",
-        "owner": "NixOS",
+        "lastModified": 1704803995,
+        "narHash": "sha256-rP9cYhot8r0kriQK8WPYdJFanqKjIKZXN1mCAtczleA=",
+        "owner": "chitter99",
         "repo": "nixpkgs",
-        "rev": "bd645e8668ec6612439a9ee7e71f7eac4099d4f6",
+        "rev": "c5e05773144b2df1a457950d9d01041c42cc1f09",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "owner": "chitter99",
+        "ref": "patch/nixos-unstable-rclone-upgrade-1.65.1",
         "repo": "nixpkgs",
         "type": "github"
       }

@@ -2,7 +2,9 @@
   description = "Machine specific configuration flake.";
   # Defining package channels
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    # TODO: Change back to official unstable branch once https://github.com/NixOS/nixpkgs/pull/279799 is merged
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:chitter99/nixpkgs/patch/nixos-unstable-rclone-upgrade-1.65.1";
 
     home-manager = {
       url = "github:nix-community/home-manager";
