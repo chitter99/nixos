@@ -8,6 +8,7 @@
     ./helix
     ./ledger
     ./git
+    ./nixgl
   ];
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
