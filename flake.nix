@@ -11,46 +11,22 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
+    nixgl.url = "github:guibou/nixGL";
+
     hyprland.url = "github:hyprwm/hyprland";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
   };
   
   # Defining flake import structure for packages
-  outputs = { self, nixpkgs, nixos-hardware, ... } @ attrs: { 
-    # Hyprland Desktop - 3 monitors 
-    nixosConfigurations.retis = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {
-        username = "eriim";
-        hostname = "retis";
-        displayConfig = "desktop";
-        nvidia_bool = "enabled";
-      } // attrs;        
-      modules = [
-            ./.
-            ./modules/obs
-            ./modules/toys
-            ./modules/virt
-          ];
-    };#retis
-
-    # Hyprland Laptop 
-    nixosConfigurations.sisyphus = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      specialArgs = {
-        username = "eriim";
-        hostname = "sisyphus";
-        displayConfig = "laptop";
-        nvidia_bool = "disabled";
-      } // attrs;        
-      modules = [
-            ./.
-          ];
-    };#sisyphus
-    # Appended new system
+  outputs = { self, nixpkgs, nixos-hardware, nixgl, ... } @ attrs:
+  let 
+    system = "x86_64-linux";
+  in { 
+    # Lenovo laptop
     nixosConfigurations.nixos-arsch-lenovo = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = {
+            inherit system;
             username = "arsch";
             hostname = "nixos-arsch-lenovo";
             displayConfig = "laptop";
@@ -60,11 +36,12 @@
               ./.
               ./modules/toys
           ];
-    };#nixos-arsch-lenovo
-    # Hestia framework
+    };
+    # Hestia framework laptop
     nixosConfigurations.hestia = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit system;
         specialArgs = {
+            inherit system;
             username = "arsch";
             hostname = "hestia";
             displayConfig = "laptop";
