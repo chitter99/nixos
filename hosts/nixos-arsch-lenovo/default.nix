@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -14,4 +14,9 @@
       turbo = "auto";
     };
   };
+  #---AMD Integrated GPU---#
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
 }
