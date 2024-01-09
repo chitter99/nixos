@@ -17,5 +17,6 @@ with pkgs; [
   mongodb-compass
   bruno
   rstudio
+  robo3t
 ]
 
