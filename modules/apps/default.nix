@@ -9,12 +9,13 @@
     ./ledger
     ./git
     ./nixgl
+    ./obsidian
   ];
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
-      obsidian
       discord
       teamviewer
+      rustdesk
      ];
   };
   services.teamviewer.enable = true;

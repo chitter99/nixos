@@ -16,6 +16,5 @@ with pkgs; [
   cups
   cups-filters
   brave
-  rustdesk
   glxinfo
 ]
