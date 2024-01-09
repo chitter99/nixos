@@ -19,6 +19,10 @@
   # Set your time zone.
   time.timeZone = "Europe/Zurich";
 
+  # Enable OpenGL
+  hardware.opengl.enable = true;
+  hardware.opengl.extraPackages = [ pkgs.mesa.drivers ];
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
     
