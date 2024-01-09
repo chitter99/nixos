@@ -18,5 +18,7 @@ with pkgs; [
   bruno
   rstudio
   robo3t
+  wireshark
+  wirelesstools
 ]
 

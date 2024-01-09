@@ -6,8 +6,10 @@
       zenity
       gnome-tweaks
       eog
-      gedit
       gnome-disk-utility
+    ]
+    ++ [
+      pkgs.gedit      
     ]; 
   };
 }
