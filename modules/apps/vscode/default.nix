@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, nix-vscode-extensions, ... }:
+{ pkgs, home-manager, username, system, nix-vscode-extensions, ... }:
 {
   home-manager.users.${username} = { pkgs, ... }: {
     # VS Code on Wayland has issues, make sure to set the title bar to custom
@@ -9,8 +9,25 @@
       enableExtensionUpdateCheck = false;
       userSettings = {
         "window.titleBarStyle" = "custom";
+        "[python]" = {
+          "editor.formatOnType" = true;
+          "editor.formatOnSave" = true;
+          "editor.formatOnPaste" = false;
+        };
+        "editor.mouseWheelZoom" = true; 
+        "[jsonc]" = {
+          "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        };
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+        "editor.formatOnSave" = true;
+        "javascript.updateImportsOnFileMove.enabled" = "always";
       };
+      extensions = with nix-vscode-extensions.extensions."${system}".vscode-marketplace; [
+        rubymaniac.vscode-direnv
+        esbenp.prettier-vscode
+      ];
     };
+      
     
     #programs.vscode = {
     #  enable = true;
