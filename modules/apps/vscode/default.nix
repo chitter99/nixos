@@ -9,6 +9,8 @@
       enableExtensionUpdateCheck = false;
       userSettings = {
         "window.titleBarStyle" = "custom";
+        "workbench.colorTheme" = "Monokai Pro (Filter Machine)";        
+        "workbench.iconTheme" = "Monokai Pro (Filter Machine) Icons";
         "[python]" = {
           "editor.formatOnType" = true;
           "editor.formatOnSave" = true;
@@ -23,8 +25,15 @@
         "javascript.updateImportsOnFileMove.enabled" = "always";
       };
       extensions = with nix-vscode-extensions.extensions."${system}".vscode-marketplace; [
+        # Tools
         rubymaniac.vscode-direnv
         esbenp.prettier-vscode
+        # LGS
+        bbenoist.nix
+        ms-python.python
+        rust-lang.rust-analyzer
+        # Theme
+        monokai.theme-monokai-pro-vscode
       ];
     };
       

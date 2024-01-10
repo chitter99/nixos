@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, ... }:
+{ pkgs, home-manager, username, hostname, ... }:
 {  
    imports = [
     ./bash
@@ -10,9 +10,12 @@
     ./starship
    ];
    # ---- Home Configuration ----
-   home-manager.users.${username} = { pkgs, ... }: {
+   home-manager.users.${username} = { pkgs, home, ... }: {
     programs.git.enable = true;
     programs.vim.enable = true;
+    home.shellAliases = {
+      nrs = "sudo nixos-rebuild switch --flake ~/git/nixos#${hostname}";
+    };
   };
 
   # ---- System Configuration ----
