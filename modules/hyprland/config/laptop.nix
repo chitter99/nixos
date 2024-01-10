@@ -16,6 +16,7 @@ wallpaper = desc:AOC U34G2G4R3 0x0000025C, ~/.config/backgrounds/5825599.jpg
 monitor=, preferred, auto, auto
 monitor=desc:AOC Q27G2G4 0x00001A29, 2560x1440, -2560x0, auto
 monitor=desc:AOC U34G2G4R3 0x0000025C, 2560x1080@60, -2560x0, auto
+monitor=desc:BOE 0x0BCA, 2256x1504@60, 0x0, 1.567
 monitor=eDP-1, preferred, 0x0, auto
 
 exec-once = hyprpaper & waybar & mako & lxqt-policykit-agent
