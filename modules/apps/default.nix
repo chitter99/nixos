@@ -10,6 +10,7 @@
     ./git
     ./nixgl
     ./obsidian
+    ./rstudio
   ];
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
