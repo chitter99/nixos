@@ -13,7 +13,7 @@ with pkgs; [
   python312
   zig
   vscode
-  mysql-workbench
+  #mysql-workbench
   mongodb-compass
   bruno
   rstudio
