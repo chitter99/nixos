@@ -24,5 +24,5 @@
   #  layout = lib.mkForce "us";
   #};
 
-  #console.keyMap = lib.mkForce "us";
+  console.keyMap = lib.mkForce "us";
 }

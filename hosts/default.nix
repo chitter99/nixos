@@ -27,8 +27,8 @@
   i18n.defaultLocale = "en_US.UTF-8";
     
   services.xserver = {
-    layout = "ch";
-    xkbVariant = "de_nodeadkeys";
+    layout = "ch,us";
+    xkbVariant = "de_nodeadkeys,";
   };
 
   console.keyMap = "sg";
