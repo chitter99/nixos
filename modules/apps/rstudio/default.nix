@@ -1,7 +1,28 @@
 { pkgs, home-manager, username, ... }:
 let
   rstudio = pkgs.rstudioWrapper.override{
-    packages = with pkgs.rPackages; []; 
+    packages = with pkgs.rPackages; [
+      base64enc
+      digest 
+      evaluate 
+      glue 
+      highr
+      htmltools 
+      jsonlite 
+      knitr 
+      magrittr
+      markdown 
+      mime 
+      rmarkdown 
+      stringi 
+      stringr 
+      xfun 
+      yaml
+      readr
+      Rcpp
+      #tidyverse
+      #ggplot2
+    ]; 
   };
 in
 {

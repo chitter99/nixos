@@ -32,6 +32,7 @@
         bbenoist.nix
         ms-python.python
         rust-lang.rust-analyzer
+        prisma.prisma
         # Theme
         monokai.theme-monokai-pro-vscode
       ];

@@ -11,12 +11,15 @@
     ./nixgl
     ./obsidian
     ./rstudio
+    ./docker
   ];
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
       discord
       teamviewer
       rustdesk
+      libreoffice-qt
+      texliveFull
      ];
   };
   services.teamviewer.enable = true;

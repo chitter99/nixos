@@ -12,6 +12,7 @@ in {
   home-manager.users.${username} = { home, ... }: {
     home.packages = with pkgs; [
       obsidian
+      pandoc
     ];
   };
 }
