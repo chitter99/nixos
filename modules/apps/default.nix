@@ -20,6 +20,7 @@
       rustdesk
       libreoffice-qt
       texliveFull
+      thunderbird
      ];
   };
   services.teamviewer.enable = true;

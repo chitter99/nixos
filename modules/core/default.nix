@@ -57,6 +57,9 @@ in
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  # Allow to cross compile arm
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+
   environment.systemPackages = corePackages ++ devPackages;
   
   # Dont change.

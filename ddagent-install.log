@@ -1,5 +1,0 @@
-[34m
-* Datadog Docker Injection install script v1.26.0
-[0m
-[31m/etc/docker does not exist. Please ensure docker is installed[0m
-

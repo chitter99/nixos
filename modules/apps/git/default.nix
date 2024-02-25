@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, nix-vscode-extensions, ... }:
+{ pkgs, home-manager, username, ... }:
 {
   home-manager.users.${username} = { pkgs, ... }: {
     programs.git = {

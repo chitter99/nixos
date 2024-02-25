@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, nix-vscode-extensions, ... }:
+{ pkgs, home-manager, username, ... }:
 {
   virtualisation.docker = {
     enable = true;

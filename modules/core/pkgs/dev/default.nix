@@ -12,7 +12,6 @@ with pkgs; [
   postgresql_15
   python312
   zig
-  vscode
   mysql-workbench
   mongodb-compass
   bruno
@@ -20,5 +19,6 @@ with pkgs; [
   robo3t
   wireshark
   wirelesstools
+  filezilla
 ]
 

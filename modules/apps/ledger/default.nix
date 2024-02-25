@@ -1,5 +1,4 @@
-
-{ pkgs, home-manager, username, nix-vscode-extensions, ... }:
+{ pkgs, home-manager, username, ... }:
 {
   users.users."${username}".extraGroups = [ "plugdev" ];
   # Required for Ledger Live to detect Ledger Nano S via USB
