@@ -12,6 +12,7 @@
     ./obsidian
     ./rstudio
     ./docker
+    ./openvpn
   ];
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
