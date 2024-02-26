@@ -37,6 +37,7 @@
         ms-python.python
         rust-lang.rust-analyzer
         prisma.prisma
+        ms-toolsai.jupyter
         #nomicfoundation.hardhat-solidity
         juanblanco.solidity
         bmewburn.vscode-intelephense-client

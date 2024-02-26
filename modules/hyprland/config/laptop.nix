@@ -106,7 +106,7 @@ general {
 }
 
 decoration {
-	rounding = 2.5
+	rounding = 2
 	
 	drop_shadow = yes
 	
@@ -151,10 +151,6 @@ master {
 
 gestures {
 	workspace_swipe = off
-}
-
-device:epic-mouse-v1 {
-	sensitivity = -0.5
 }
 
 misc {
