@@ -22,6 +22,7 @@
       libreoffice-qt
       texliveFull
       thunderbird
+      gephi
      ];
   };
   services.teamviewer.enable = true;

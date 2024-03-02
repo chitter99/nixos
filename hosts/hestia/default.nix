@@ -9,10 +9,11 @@
     battery = {
       governor = "powersave";
       turbo = "auto";
-   };
+      scaling_min_freq = 1800000;
+    };
     charger = {
       governor = "performance";
-      turbo = "always";
+      turbo = "auto";
       scaling_min_freq = 3300000;
       scaling_max_freq = 5100000;
     };
