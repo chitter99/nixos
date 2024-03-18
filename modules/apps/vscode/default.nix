@@ -1,6 +1,17 @@
 { pkgs, home-manager, username, system, nix-vscode-extensions, ... }:
 {
   home-manager.users.${username} = { pkgs, ... }: {
+    # Jupiter notebook fix
+    home.packages = with pkgs; [
+      gcc-unwrapped
+      nixd
+      nixpkgs-fmt
+    ];
+    home.sessionVariables = {
+      LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+        pkgs.gcc-unwrapped
+      ];
+    };
     # VS Code on Wayland has issues, make sure to set the title bar to custom
     # https://github.com/microsoft/vscode/issues/181533
     programs.vscode = {
@@ -26,6 +37,24 @@
         "javascript.updateImportsOnFileMove.enabled" = "always";
         "[nix]" = {
           "editor.defaultFormatter" = "jnoortheen.nix-ide";
+        };
+        #### NixIDE
+        "nix.enableLanguageServer" = true;
+        "nix.formatterPath" = "nixpkgs-fmt";
+        "nix.serverPath" = "nixd";
+        "nix.serverSettings" = {
+          "nixd" = {
+            "eval" = { };
+            "formatting" = {
+              "command" = "nixpkgs-fmt";
+            };
+            "options" = {
+              "enable" = true;
+              "target" = {
+                "args" = [ ];
+              };
+            };
+          };
         };
       };
       extensions = with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion "1.86.2").vscode-marketplace; [

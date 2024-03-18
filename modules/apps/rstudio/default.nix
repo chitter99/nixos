@@ -20,8 +20,8 @@ let
       yaml
       readr
       Rcpp
-      #tidyverse
-      #ggplot2
+      tidyverse
+      ggplot2
     ]; 
   };
 in
