@@ -21,6 +21,9 @@ in
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
+    # TODO: Remove again once CVE has been fixed
+    # https://github.com/NixOS/nixpkgs/pull/294031
+    "nix-2.16.2"
   ];
  
   programs.direnv = {
