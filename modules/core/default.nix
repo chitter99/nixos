@@ -20,12 +20,17 @@ in
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
     # TODO: Remove again once CVE has been fixed
     # https://github.com/NixOS/nixpkgs/pull/294031
     "nix-2.16.2"
   ];
- 
+
+  i18n.supportedLocales = [
+    "C.UTF-8/UTF-8"
+    "en_US.UTF-8/UTF-8"
+    "de_CH.UTF-8/UTF-8"
+  ];
+
   programs.direnv = {
     enable = true;
     silent = true;

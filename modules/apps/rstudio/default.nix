@@ -22,6 +22,7 @@ let
       Rcpp
       tidyverse
       ggplot2
+      kableExtra
     ]; 
   };
 in

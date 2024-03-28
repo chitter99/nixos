@@ -25,6 +25,9 @@
     };
   }; 
   services.udev.packages = [ pkgs.yubikey-personalization ];
+  services.fprintd = {
+    enable = false;
+  };
   programs.gnupg.agent.enable = true;
 }
 
