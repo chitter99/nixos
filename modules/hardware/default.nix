@@ -1,13 +1,8 @@
-{ nvidia_bool, ... }:
-let
- nvidia = {
-    "enabled" = [ (import ./nvidia) ];
-    "disabled" = [ ];
-  }; 
-in 
+{ hostOptions, ... }:
 {
   imports = [
-	./bluetooth
-	./sound
-  ] ++ (nvidia.${nvidia_bool} or [ ]); 
+    ./bluetooth.nix
+    ./opengl.nix
+    ./sound.nix
+  ] ++ (if hostOptions.nvidia then [ ./nvidia.nix ] else [ ]);
 }

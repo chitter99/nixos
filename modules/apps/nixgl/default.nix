@@ -1,4 +1,4 @@
-{ nixpkgs, nixgl, system, nvidia_bool, ... }:
+{ nixpkgs, nixgl, system, hostOptions, ... }:
 let
   pkgs = import nixpkgs {
     inherit system;
@@ -6,9 +6,10 @@ let
   };
 in
 {
-  environment.systemPackages = if nvidia_bool == "nixVulkanIntel" then [
-    pkgs.nixgl.auto.nixGLNvidia
-  ] else [
-    pkgs.nixgl.nixVulkanIntel
-  ];
+  environment.systemPackages =
+    if hostOptions.nvidia then [
+      pkgs.nixgl.auto.nixGLNvidia
+    ] else [
+      pkgs.nixgl.nixVulkanIntel
+    ];
 }

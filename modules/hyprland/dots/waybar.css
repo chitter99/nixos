@@ -1,0 +1,38 @@
+* {
+  font-family: "M+1Code Nerd Font";
+
+  font-size: 16px;
+
+  color: @theme_fg_color;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+window#waybar > * {
+  padding: 10px 10px;
+}
+
+.modules-right,
+.modules-left {
+  background-color: rgba(10, 10, 10, 0.5);
+  border-radius: 4px;
+}
+
+.modules-right > widget > *,
+.modules-left > widget > * {
+  padding: 0 5px;
+}
+
+#custom-nix {
+  font-size: 20px;
+}
+
+#workspaces button {
+  padding: 6px 5px;
+}
+
+#workspaces button.active label {
+  color: @theme_selected_fg_color;
+}

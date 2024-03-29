@@ -1,6 +1,6 @@
-{ pkgs, home-manager, username, ... }:
+{ pkgs, ... }:
 {
-  imports = [ 
+  imports = [
     ./1password
     ./browsing
     ./rclone
@@ -13,17 +13,9 @@
     ./rstudio
     ./docker
     ./openvpn
+    ./wine
+    ./gnome
+    ./pkgs.dev.nix
+    ./pkgs.nix
   ];
-  home-manager.users.${username} = { pkgs, ... }: {
-    home.packages = with pkgs; [
-      discord
-      teamviewer
-      rustdesk
-      libreoffice-qt
-      texliveFull
-      thunderbird
-      gephi
-     ];
-  };
-  services.teamviewer.enable = true;
 }

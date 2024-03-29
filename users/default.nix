@@ -3,5 +3,5 @@
   imports = [
     ./${username}
   ];
-  users.groups.wireshark = {};
+  users.groups.wireshark = { };
 }

@@ -6,6 +6,5 @@
     ./hardware
     ./hyprland
     ./themes
-    ./gnome
   ];
 }
