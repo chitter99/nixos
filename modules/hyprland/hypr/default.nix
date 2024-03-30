@@ -11,10 +11,10 @@
 
   home-manager.users.${username} = { ... }: {
     home.file = {
-      ".config/hypr/hypridle.config".source = ./dots/hypridle.conf;
-      ".config/hypr/hyprland.config".source = ./dots/hyprland.conf;
-      ".config/hypr/hyprlock.config".source = ./dots/hyprlock.conf;
-      ".config/hypr/hyprpaper.config".source = ./dots/hyprpaper.conf;
+      ".config/hypr/hypridle.conf".source = ./dots/hypridle.conf;
+      ".config/hypr/hyprland.conf".source = ./dots/hyprland.conf;
+      ".config/hypr/hyprlock.conf".source = ./dots/hyprlock.conf;
+      ".config/hypr/hyprpaper.conf".source = ./dots/hyprpaper.conf;
     };
   };
 }

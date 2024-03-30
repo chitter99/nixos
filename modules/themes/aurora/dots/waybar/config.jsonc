@@ -10,7 +10,6 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
-    "tray",
     "pulseaudio",
     "backlight",
     "network",
@@ -65,18 +64,17 @@
       "warning": 30,
       "critical": 10
     },
-    "format": "{icon} {capacity}%",
-    "format-plugged": "  {capacity}%",
-    "format-alt": "{icon} {time}",
-    // "format-good": "", // An empty format will hide the module
-    "format-full": "  {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " ", " "],
-    "format-charging": "  {capacity}%",
+    "format": "{icon}",
+    "format-plugged": "",
+    "format-alt": "{icon}  {capacity}%",
+    "format-full": "",
+    "format-icons": [" ", " ", " ", " ", " ", ""],
+    "format-charging": "",
     "interval": 2
   },
   "network": {
     "interface": "wlp*",
-    "format": "󰱓 ",
+    "format": "󰱓",
     "format-disconnected": "{icon} No Internet",
     "format-linked": "󰅛 {ifname} (No IP)",
     "format-alt": "󰛶 {bandwidthUpBytes} | 󰛴 {bandwidthDownBytes}",
@@ -111,7 +109,7 @@
   },
   "bluetooth": {
     "format": " {status}",
-    "format-disabled": "", // an empty format will hide the module
+    "format-disabled": " {status}",
     "format-connected": " {num_connections}",
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"

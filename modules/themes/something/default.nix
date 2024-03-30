@@ -13,13 +13,6 @@
 
         	col.active_border = rgb(E0E1DD) rgb(778DA9) 45deg
         	col.inactive_border = rgb(0D1B2A) rgb(1B263B) 45deg
-        	
-        	layout = dwindle
-        	
-        	cursor_inactive_timeout = 15
-        	no_cursor_warps = yes
-        	resize_on_border = yes
-        	hover_icon_on_border = yes
         }
 
         decoration {
