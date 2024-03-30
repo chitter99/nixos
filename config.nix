@@ -11,7 +11,7 @@ in
       options = {
         nvidia = false;
         powersave = true;
-        theme = "something";
+        theme = "aurora";
       };
       modules = [
         nixos-hardware.nixosModules.framework-13-7040-amd

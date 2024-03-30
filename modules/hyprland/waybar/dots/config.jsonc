@@ -60,7 +60,6 @@
   },
   "clock": {
     "format": "{:%H:%M}",
-    //"format": " {:%a %b %d %Y | %H:%M}",
     "format-alt": "{:%a %b %d %Y | %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar-weeks-pos": "right",
