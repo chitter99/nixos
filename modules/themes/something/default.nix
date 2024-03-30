@@ -2,6 +2,7 @@
 {
   home-manager.users.${username} = { pkgs, ... }: {
     home.file = {
+      ".config/assets/wallpapers".source = ./wallpapers;
       ".config/hypr/theme.conf".text = ''
         exec-once = hyprctl setcursor Bibata-Modern-Classic 24
         
