@@ -7,7 +7,7 @@
   "margin-bottom": -11,
 
   // --- Modules ---
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["custom/nix", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     // Grouped pill
@@ -22,6 +22,11 @@
   ],
 
   // --- Modules configuration ---
+  "custom/nix": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "/run/current-system/sw/bin/wofi --show drun"
+  },
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-active": " {icon} ",

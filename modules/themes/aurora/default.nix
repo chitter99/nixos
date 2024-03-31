@@ -6,6 +6,7 @@
       ".config/hypr/theme.conf".source = ./dots/hypr/theme.conf;
       ".config/waybar/config.jsonc".source = lib.mkForce ./dots/waybar/config.jsonc;
       ".config/waybar/style.css".source = lib.mkForce ./dots/waybar/style.css;
+      ".config/waybar/animations.css".source = ./dots/waybar/animations.css;
     };
 
     gtk = {
