@@ -3,19 +3,21 @@
   "layer": "top",
   "position": "top",
   "height": 50,
-  "spacing": 5,
+  "spacing": 0,
   "margin-bottom": -11,
 
   // --- Modules ---
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
+    // Grouped pill
     "pulseaudio",
     "backlight",
     "network",
-    "battery",
     "bluetooth",
+
     "cpu",
+    "battery",
     "clock"
   ],
 
@@ -29,7 +31,7 @@
     "separate-outputs": true
   },
   "hyprland/window": {
-    "format": "{title}",
+    "format": "{}",
     "separate-outputs": true
   },
   "tray": {
@@ -108,8 +110,8 @@
     "on-click": "pavucontrol"
   },
   "bluetooth": {
-    "format": " {status}",
-    "format-disabled": " {status}",
+    "format": "",
+    "format-disabled": "",
     "format-connected": " {num_connections}",
     "tooltip-format": "{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}   {device_address}"
