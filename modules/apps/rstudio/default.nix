@@ -23,6 +23,7 @@ let
       tidyverse
       ggplot2
       kableExtra
+      shiny
     ]; 
   };
 in

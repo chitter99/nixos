@@ -23,6 +23,7 @@
     # Utils
     ripgrep
     unzip
+    p7zip
     wget
     vim
 

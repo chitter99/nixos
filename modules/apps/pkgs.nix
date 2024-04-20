@@ -11,6 +11,7 @@
       gephi
       yubikey-manager
       spotify
+      rustdesk
     ];
   };
   services.teamviewer.enable = true;

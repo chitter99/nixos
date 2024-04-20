@@ -1,4 +1,4 @@
-{ hyprland, ... }:
+{ ... }:
 {
   imports = [
     ./apps
@@ -6,5 +6,6 @@
     ./hardware
     ./hyprland
     ./themes
+    ./home
   ];
 }

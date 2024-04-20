@@ -15,6 +15,7 @@
     ./openvpn
     ./wine
     ./gnome
+    ./neovim
     ./pkgs.dev.nix
     ./pkgs.nix
   ];

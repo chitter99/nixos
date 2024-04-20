@@ -57,7 +57,7 @@
           };
         };
       };
-      extensions = with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion "1.86.2").vscode-marketplace; [
+      extensions = with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion "1.87.2").vscode-marketplace; [
         # Tools
         rubymaniac.vscode-direnv
         esbenp.prettier-vscode
