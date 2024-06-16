@@ -35,9 +35,11 @@
               "<leader>s" = ":w<CR>";
               "<C-s>" = ":w<CR>";
 
-              # navigate to left/right window
-              "<leader>h" = "<C-w>h";
-              "<leader>l" = "<C-w>l";
+              # window navigation
+              #"<leader>h" = "<C-w>h";
+              #"<leader>j" = "<C-w>j";
+              #"<leader>k" = "<C-w>k";
+              #"<leader>l" = "<C-w>l";
 
               # Press 'H', 'L' to jump to start/end of a line (first/last character)
               L = "$";

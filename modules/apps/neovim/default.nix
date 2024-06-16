@@ -1,25 +1,24 @@
-{ nixvim, ... }: {
-  imports = [
-    nixvim.homeManagerModules.nixvim
-    ./plugins
-    ./keymappings.nix
-    ./options.nix
-    ./todo.nix
-  ];
+{ nixvim, username, ... }: {
+  home-manager.users.${username} = {
+        imports = [
+        nixvim.homeManagerModules.nixvim
+            ./plugins
+            ./keymappings.nix
+            ./options.nix
+            ./todo.nix
+        ];
+        programs.nixvim = {
+            enable = true;
+            defaultEditor = true;
 
-  home.shellAliases.v = "nvim";
+            viAlias = true;
+            vimAlias = true;
 
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
+            luaLoader.enable = true;
 
-    viAlias = true;
-    vimAlias = true;
-
-    luaLoader.enable = true;
-
-    # Highlight and remove extra white spaces
-    highlight.ExtraWhitespace.bg = "red";
-    match.ExtraWhitespace = "\\s\\+$";
-  };
+            # Highlight and remove extra white spaces
+            highlight.ExtraWhitespace.bg = "red";
+            match.ExtraWhitespace = "\\s\\+$";
+        };
+    };
 }

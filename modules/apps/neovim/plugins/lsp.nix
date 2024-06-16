@@ -23,9 +23,10 @@
         };
 
         servers = {
-          clangd.enable = true;
-          lua-ls.enable = true;
-          texlab.enable = true;
+          nixd.enable = true;
+          pylsp.enable =  true;
+          tsserver.enable = true;
+          #r_language_server.enable = true;
         };
       };
     };

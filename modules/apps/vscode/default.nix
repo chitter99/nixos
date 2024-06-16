@@ -6,6 +6,7 @@
       gcc-unwrapped
       nixd
       nixpkgs-fmt
+      pkg-config
     ];
     home.sessionVariables = {
       LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
@@ -21,14 +22,14 @@
       enableExtensionUpdateCheck = false;
       userSettings = {
         "window.titleBarStyle" = "custom";
-        "workbench.colorTheme" = "Monokai Pro (Filter Machine)";        
+        "workbench.colorTheme" = "Monokai Pro (Filter Machine)";
         #"workbench.iconTheme" = "Monokai Pro (Filter Machine) Icons";
         "[python]" = {
           "editor.formatOnType" = true;
           "editor.formatOnSave" = true;
           "editor.formatOnPaste" = false;
         };
-        "editor.mouseWheelZoom" = true; 
+        "editor.mouseWheelZoom" = true;
         "[jsonc]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
         };
@@ -57,23 +58,25 @@
           };
         };
       };
-      extensions = with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion "1.87.2").vscode-marketplace; [
+      extensions = with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion "1.89.1").vscode-marketplace; [
+      #extensions = with nix-vscode-extensions.extensions."${system}".vscode-marketplace; [
         # Tools
         rubymaniac.vscode-direnv
         esbenp.prettier-vscode
-        # LGS
+        # LSP
         jnoortheen.nix-ide
         ms-python.python
         rust-lang.rust-analyzer
         prisma.prisma
-        ms-toolsai.jupyter
+        #ms-toolsai.jupyter
         reditorsupport.r
+        james-yu.latex-workshop
         #nomicfoundation.hardhat-solidity
         juanblanco.solidity
         bmewburn.vscode-intelephense-client
         # Theme
         monokai.theme-monokai-pro-vscode
       ];
-    };    
+    };
   };
 }

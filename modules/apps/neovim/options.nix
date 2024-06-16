@@ -1,5 +1,9 @@
 {
   programs.nixvim = {
+
+    #colorschemes.ayu.enable = true;
+    colorschemes.catppuccin.enable = true;
+
     globals = {
       # Disable useless providers
       loaded_ruby_provider = 0; # Ruby

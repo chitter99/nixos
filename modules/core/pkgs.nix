@@ -19,6 +19,7 @@
     pavucontrol
     playerctl
     ranger
+    wirelesstools
 
     # Utils
     ripgrep
@@ -26,6 +27,7 @@
     p7zip
     wget
     vim
+    nfs-utils
 
     # Mics
     glxinfo
