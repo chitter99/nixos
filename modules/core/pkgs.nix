@@ -1,18 +1,5 @@
-{ pkgs, username, ... }:
+{ pkgs, ... }:
 {
-  home-manager.users.${username} = { ... }: {
-    programs.git.enable = true;
-    programs.vim.enable = true;
-  };
-
-  programs = {
-    htop.enable = true;
-    direnv = {
-      enable = true;
-      silent = true;
-    };
-  };
-
   environment.systemPackages = with pkgs; [
     # Systemctl
     brightnessctl
@@ -28,6 +15,7 @@
     wget
     vim
     nfs-utils
+    git
 
     # Mics
     glxinfo

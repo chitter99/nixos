@@ -14,11 +14,7 @@
   # Enable Flakes and nix-commands
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  home-manager.users.${username} = { pkgs, ... }: {
-    /* The home.stateVersion option does not have a default and must be set */
-    home.stateVersion = "23.05";
-    nixpkgs.config.allowUnfree = true;
-  };
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # Localization
@@ -44,6 +40,6 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
-  # Dont change.
+  # Don't change.
   system.stateVersion = "23.05"; # Did you read the comment?
 }

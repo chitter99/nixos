@@ -1,10 +1,11 @@
 { ... }:
 {
   imports = [
+    ./apps
     ./core
     ./hardware
-    ./home
+    ./hyprland
     ./themes
-    ./users
+    ./home
   ];
 }

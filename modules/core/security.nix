@@ -1,9 +1,8 @@
-{ pkgs, username, ... }:
+{ pkgs, ... }:
 {
   services.gnome = {
     gnome-keyring.enable = true;
   };
-
   security = {
     pam = {
       u2f.enable = true;
