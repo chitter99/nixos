@@ -16,6 +16,7 @@
     ./wine
     ./gnome
     ./neovim
+    ./tailscale
     ./pkgs.dev.nix
     ./pkgs.nix
   ];
