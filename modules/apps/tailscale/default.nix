@@ -27,7 +27,7 @@
       fi
 
       # otherwise authenticate with tailscale
-      ${tailscale}/bin/tailscale up -authkey tskey-auth-kz9D4xZm6g11CNTRL-7yHiUUfJufc6m8XGvCLjgcvpUriN6BpTX
+      ${tailscale}/bin/tailscale up -authkey tskey-auth-kz9D4xZm6g11CNTRL-7yHiUUfJufc6m8XGvCLjgcvpUriN6BpTX --accept-routes
     '';
   };
    networking.firewall = {
