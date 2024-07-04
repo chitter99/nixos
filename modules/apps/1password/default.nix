@@ -4,7 +4,7 @@
     home.file = {
       ".ssh/config".text = ''
       Host *
-      IdentityAgent ~/.1password/agent.sock
+        IdentityAgent ~/.1password/agent.sock
       '';
       ".config/1Password/ssh/agent.toml".text = ''
       [[ssh-keys]]
