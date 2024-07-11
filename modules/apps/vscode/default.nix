@@ -68,6 +68,7 @@
         ms-python.python
         rust-lang.rust-analyzer
         prisma.prisma
+        hashicorp.terraform
         #ms-toolsai.jupyter
         reditorsupport.r
         james-yu.latex-workshop

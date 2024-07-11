@@ -9,6 +9,10 @@
       ".config/1Password/ssh/agent.toml".text = ''
       [[ssh-keys]]
       vault = "SSH"
+
+      [[ssh-keys]]
+      vault = "Team Technology"
+      account = "MySmartHeart AG"
       '';
     };
   };

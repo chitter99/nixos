@@ -6,6 +6,7 @@
     openFirewall = true;
   };
   networking = {
+    enableIPv6  = false;
     networkmanager.enable = true;
     hostName = "${hostname}";
     firewall = {

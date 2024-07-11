@@ -15,6 +15,7 @@
       python312
       zig
       mysql-workbench
+      mysql80
       mongodb-compass
       bruno
       robo3t

@@ -20,6 +20,7 @@
     playerctl
     ranger
     wirelesstools
+    inetutils
 
     # Utils
     ripgrep

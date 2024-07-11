@@ -27,6 +27,13 @@ in
       # X509 certificate sha256 sum, trust only this one!
       trusted-cert = b88e832db8ae7fabd0209d56ec501fdad4e66b78dc44308ff37edf13aaf83d6b
       '';
+      ".vpn/msh".text = ''
+      host = 212.51.138.190
+      port = 10443
+      username = msh.aschmid
+      set-dns = 0
+      pppd-use-peerdns = 0
+      '';
     };
   };
 }
