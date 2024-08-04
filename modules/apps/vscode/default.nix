@@ -17,7 +17,7 @@
     # https://github.com/microsoft/vscode/issues/181533
     programs.vscode = {
       enable = true;
-      mutableExtensionsDir = true;
+      mutableExtensionsDir = false;
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = false;
       userSettings = {
