@@ -4,12 +4,9 @@ let
     inherit system;
     overlays = [ nixgl.overlay ];
   };
-in
-{
-  environment.systemPackages =
-    if hostOptions.nvidia then [
-      pkgs.nixgl.auto.nixGLNvidia
-    ] else [
-      pkgs.nixgl.nixVulkanIntel
-    ];
+in {
+  environment.systemPackages = if hostOptions.nvidia then
+    [ pkgs.nixgl.auto.nixGLNvidia ]
+  else
+    [ pkgs.nixgl.nixVulkanIntel ];
 }

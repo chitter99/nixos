@@ -1,5 +1,4 @@
-{ pkgs, home-manager, username, ... }:
-{
+{ pkgs, home-manager, username, ... }: {
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
       discord
@@ -15,7 +14,5 @@
   };
   services.teamviewer.enable = true;
   services.transmission.enable = true;
-  programs = {
-    steam.enable = true;
-  };
+  programs = { steam.enable = true; };
 }

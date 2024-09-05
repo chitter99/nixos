@@ -1,10 +1,5 @@
-{ pkgs, home-manager, username, hostname, ... }:
-{
-  imports = [
-    ./fish.nix
-    ./kitty.nix
-    ./starship.nix
-  ];
+{ pkgs, home-manager, username, hostname, ... }: {
+  imports = [ ./fish.nix ./kitty.nix ./starship.nix ];
 
   home-manager.users.${username} = { ... }: {
     home.shellAliases = {

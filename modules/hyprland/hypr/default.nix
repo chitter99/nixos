@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   programs.hyprland.enable = true;
 
   environment.systemPackages = with pkgs; [

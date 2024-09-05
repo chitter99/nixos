@@ -1,9 +1,6 @@
-{ pkgs, home-manager, username, ... }:
-{
+{ pkgs, home-manager, username, ... }: {
   home-manager.users.${username} = { pkgs, ... }: {
-    home.sessionVariables = {
-      MOZ_ENABLE_WAYLAND = 1;
-    };
+    home.sessionVariables = { MOZ_ENABLE_WAYLAND = 1; };
 
     programs = {
       chromium.enable = true;
@@ -25,11 +22,7 @@
         "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
       ];
     };
-    firefox = {
-      enable = true;
-    };
+    firefox = { enable = true; };
   };
-  environment.systemPackages = with pkgs; [
-    brave
-  ];
+  environment.systemPackages = with pkgs; [ brave ];
 }

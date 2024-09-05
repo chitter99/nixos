@@ -24,7 +24,7 @@
 
         servers = {
           nixd.enable = true;
-          pylsp.enable =  true;
+          pylsp.enable = true;
           tsserver.enable = true;
           #r_language_server.enable = true;
         };

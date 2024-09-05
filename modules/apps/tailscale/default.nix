@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
 
@@ -30,7 +29,7 @@
       ${tailscale}/bin/tailscale up -authkey tskey-auth-kz9D4xZm6g11CNTRL-7yHiUUfJufc6m8XGvCLjgcvpUriN6BpTX --accept-routes
     '';
   };
-   networking.firewall = {
+  networking.firewall = {
     # enable the firewall
     enable = true;
 
@@ -43,6 +42,5 @@
     # allow you to SSH in over the public internet
     # allowedTCPPorts = [ 22 ];
   };
-
 
 }

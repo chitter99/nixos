@@ -1,8 +1,5 @@
-{ pkgs, username, ... }:
-{
-  virtualisation.docker = {
-    enable = true;
-  };
+{ pkgs, username, ... }: {
+  virtualisation.docker = { enable = true; };
   virtualisation.libvirtd = {
     enable = true;
     allowedBridges = [ "virbr0" ];

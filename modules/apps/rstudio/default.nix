@@ -1,22 +1,22 @@
 { pkgs, home-manager, username, ... }:
 let
-  rstudio = pkgs.rstudioWrapper.override{
+  rstudio = pkgs.rstudioWrapper.override {
     packages = with pkgs.rPackages; [
       base64enc
-      digest 
-      evaluate 
-      glue 
+      digest
+      evaluate
+      glue
       highr
-      htmltools 
-      jsonlite 
-      knitr 
+      htmltools
+      jsonlite
+      knitr
       magrittr
-      markdown 
-      mime 
-      rmarkdown 
-      stringi 
-      stringr 
-      xfun 
+      markdown
+      mime
+      rmarkdown
+      stringi
+      stringr
+      xfun
       yaml
       readr
       Rcpp
@@ -24,10 +24,9 @@ let
       ggplot2
       kableExtra
       shiny
-    ]; 
+    ];
   };
-in
-{
+in {
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [ rstudio ];
   };

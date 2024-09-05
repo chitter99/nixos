@@ -1,5 +1,4 @@
-{ pkgs, home-manager, username, ... }:
-{
+{ pkgs, home-manager, username, ... }: {
   home-manager.users.${username} = { pkgs, ... }: {
     programs.git = {
       enable = true;
@@ -7,7 +6,5 @@
       userName = "Aaron Schmid";
     };
   };
-  environment.systemPackages = with pkgs; [ 
-    git
-  ];
+  environment.systemPackages = with pkgs; [ git ];
 }

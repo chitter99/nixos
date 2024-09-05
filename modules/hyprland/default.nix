@@ -1,18 +1,7 @@
-{ pkgs, username, ... }:
-{
-  imports = [
-    ./hypr
-    ./mako
-    ./waybar
-    ./wofi
-    ./greetd.nix
-  ];
+{ pkgs, username, ... }: {
+  imports = [ ./hypr ./mako ./waybar ./wofi ./greetd.nix ];
 
-  xdg = {
-    portal = {
-      enable = true;
-    };
-  };
+  xdg = { portal = { enable = true; }; };
 
   # Source: https://wiki.hyprland.org/Nix/
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";

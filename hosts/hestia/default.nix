@@ -1,7 +1,5 @@
 { lib, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   # Override auto-cpufreq options
   services.auto-cpufreq.settings = {

@@ -1,5 +1,4 @@
-{ pkgs, username, ... }:
-{
+{ pkgs, username, ... }: {
   services.greetd = {
     enable = true;
     restart = false;

@@ -1,9 +1,1 @@
-{ ... }:
-{
-  imports = [
-    ./assets
-    ./hosts
-    ./modules
-    ./users
-  ];
-}
+{ ... }: { imports = [ ./assets ./hosts ./modules ./users ]; }

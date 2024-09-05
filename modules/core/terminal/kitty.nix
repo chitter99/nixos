@@ -1,8 +1,5 @@
-{ pkgs, home-manager, username, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    kitty
-  ];
+{ pkgs, home-manager, username, ... }: {
+  environment.systemPackages = with pkgs; [ kitty ];
   home-manager.users.${username} = { ... }: {
     home.file = {
       ".config/kitty/kitty.conf".text = ''

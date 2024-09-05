@@ -1,5 +1,4 @@
-{ pkgs, home-manager, username, ... }:
-{
+{ pkgs, home-manager, username, ... }: {
   programs.dconf.enable = true;
 
   home-manager.users.${username} = { pkgs, ... }: {

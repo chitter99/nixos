@@ -1,6 +1,3 @@
-{ pkgs, home-manager, username, ... }:
-{
-  virtualisation.docker = {
-    enable = true;
-  };
+{ pkgs, home-manager, username, ... }: {
+  virtualisation.docker = { enable = true; };
 }

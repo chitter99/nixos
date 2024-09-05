@@ -1,7 +1,6 @@
-{ ... }:
-{
-    programs.nixvim.plugins.wilder = {
-        enable = true;
-        modes = [":" "/" "?"];
-    };
+{ ... }: {
+  programs.nixvim.plugins.wilder = {
+    enable = true;
+    modes = [ ":" "/" "?" ];
+  };
 }

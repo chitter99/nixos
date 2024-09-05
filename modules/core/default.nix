@@ -1,5 +1,4 @@
-{ pkgs, home-manager, username, hostname, hostOptions, ... }:
-{
+{ pkgs, home-manager, username, hostname, hostOptions, ... }: {
   imports = [
     ./fonts
     ./terminal
@@ -15,7 +14,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   home-manager.users.${username} = { pkgs, ... }: {
-    /* The home.stateVersion option does not have a default and must be set */
+    # The home.stateVersion option does not have a default and must be set
     home.stateVersion = "23.05";
     nixpkgs.config.allowUnfree = true;
   };
@@ -24,11 +23,8 @@
   # Localization
   time.timeZone = "Europe/Zurich";
   i18n = {
-    supportedLocales = [
-      "C.UTF-8/UTF-8"
-      "en_US.UTF-8/UTF-8"
-      "de_CH.UTF-8/UTF-8"
-    ];
+    supportedLocales =
+      [ "C.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" "de_CH.UTF-8/UTF-8" ];
     defaultLocale = "en_US.UTF-8";
   };
 

@@ -1,11 +1,10 @@
-{ pkgs, home-manager, username, ... }:
-{
+{ pkgs, home-manager, username, ... }: {
   home-manager.users.${username} = { pkgs, ... }: {
     home.file = {
       ".config/assets/wallpapers".source = ./wallpapers;
       ".config/hypr/theme.conf".text = ''
         exec-once = hyprctl setcursor Bibata-Modern-Classic 24
-        
+
         general {
         	gaps_in = 5
         	gaps_out = 10

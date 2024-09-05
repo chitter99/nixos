@@ -15,7 +15,7 @@
     ];
     extra-experimental-features = "nix-command flakes";
     trusted-users = ''
-        root arsch
+      root arsch
     '';
   };
   inputs = {
