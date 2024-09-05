@@ -58,7 +58,7 @@
           };
         };
       };
-      extensions = with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion "1.89.1").vscode-marketplace; [
+      extensions = with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion "1.92.1").vscode-marketplace; [
       #extensions = with nix-vscode-extensions.extensions."${system}".vscode-marketplace; [
         # Tools
         rubymaniac.vscode-direnv
@@ -66,6 +66,7 @@
         # LSP
         jnoortheen.nix-ide
         ms-python.python
+        ms-python.debugpy
         rust-lang.rust-analyzer
         prisma.prisma
         hashicorp.terraform

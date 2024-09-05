@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  # TODO: Make this dynamic
+  nix.settings.trusted-users = [
+    "arsch"
+  ];
   users.users.arsch = {
     shell = pkgs.fish;
     isNormalUser = true;

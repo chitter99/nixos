@@ -3,15 +3,12 @@
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
       discord
-      teamviewer
-      rustdesk
       libreoffice-qt
       texliveFull
       thunderbird
       gephi
       yubikey-manager
       spotify
-      rustdesk
       hexchat
       transmission_4-qt
     ];

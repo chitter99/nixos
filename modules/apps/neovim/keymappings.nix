@@ -57,6 +57,24 @@
               "<M-j>" = ":move+<CR>";
 
               "<leader>rp" = ":!remi push<CR>";
+
+              # Telescope
+              # Find files using Telescope command-line sugar.
+              "<leader>ff" = "<cmd>Telescope find_files<CR>";
+              "<leader>fg" = "<cmd>Telescope live_grep<CR>";
+              "<leader>b" = "<cmd>Telescope buffers<CR>";
+              "<leader>fh" = "<cmd>Telescope help_tags<CR>";
+              "<leader>fd" = "<cmd>Telescope diagnostics<CR>";
+
+              # FZF like bindings
+              "<C-p>" = "<cmd>Telescope git_files<CR>";
+              "<leader>p" = "<cmd>Telescope oldfiles<CR>";
+              "<C-f>" = "<cmd>Telescope live_grep<CR>";
+
+              # Barbar
+              "<TAB>" = "<cmd>BufferNext<CR>";
+              "<S-TAB>" = "<cmd>BufferPrevious<CR>";
+              "<C-w>" = "<cmd>BufferClose<CR>";
             };
         visual =
           lib.mapAttrsToList

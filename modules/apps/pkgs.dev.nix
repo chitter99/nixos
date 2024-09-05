@@ -20,6 +20,8 @@
       bruno
       robo3t
       filezilla
+      devenv
+      pgadmin4
     ];
   };
 }
