@@ -8,6 +8,7 @@
     ./printing.nix
     ./security.nix
     ./virt.nix
+    ./xdg.nix
   ] ++ (if hostOptions.powersave then [ ./powersave.nix ] else [ ]);
 
   # Enable Flakes and nix-commands

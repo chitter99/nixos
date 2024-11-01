@@ -10,6 +10,7 @@
       spotify
       hexchat
       transmission_4-qt
+      quickemu
     ];
   };
   services.teamviewer.enable = true;

@@ -9,7 +9,7 @@
     ./startify.nix
     ./telescope.nix
     ./treesitter.nix
-    #    ./molten.nix
+    ./molten.nix
     ./wilder.nix
   ];
 }

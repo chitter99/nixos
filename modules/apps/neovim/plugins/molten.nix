@@ -14,7 +14,7 @@ let
   };
 in {
   programs.nixvim = {
-    extraLuaPackages = with pkgs; [ magicfk ];
+    extraLuaPackages = ps: [ ps.magick ];
     extraPackages = with pkgs; [ imagemagick ];
     extraPython3Packages = p:
       with p; [

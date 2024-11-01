@@ -21,6 +21,9 @@
       filezilla
       devenv
       pgadmin4
+      jq
+      quickgui
+      netcat
     ];
   };
 }

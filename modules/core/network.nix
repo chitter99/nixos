@@ -23,6 +23,9 @@
       ];
     };
     nameservers = [ "8.8.8.8" ];
+    extraHosts = ''
+      160.85.252.22 osi
+    '';
   };
   users.users.${username} = { extraGroups = [ "networkmanager" ]; };
 }

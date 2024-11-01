@@ -21,6 +21,7 @@
 
     # Mics
     lxqt.lxqt-policykit
+    nwg-displays
   ];
 }
 
