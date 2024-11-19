@@ -11,6 +11,7 @@
       hexchat
       transmission_4-qt
       quickemu
+      vlc
     ];
   };
   services.teamviewer.enable = true;

@@ -1,0 +1,2 @@
+{ ... }: { services.pgadmin.enable = true; }
+

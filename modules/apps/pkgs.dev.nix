@@ -23,7 +23,8 @@
       pgadmin4
       jq
       quickgui
-      netcat
+      netcat-gnu
+      dig
     ];
   };
 }

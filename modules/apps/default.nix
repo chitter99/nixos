@@ -16,6 +16,7 @@
     ./gnome
     ./neovim
     ./tailscale
+    ./pgadmin
     ./pkgs.dev.nix
     ./pkgs.nix
   ];
