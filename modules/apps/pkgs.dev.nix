@@ -20,9 +20,7 @@
       robo3t
       filezilla
       devenv
-      pgadmin4
       jq
-      quickgui
       netcat-gnu
       dig
     ];

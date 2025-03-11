@@ -3,7 +3,8 @@
     # Jupiter notebook fix
     home.packages = with pkgs; [ gcc-unwrapped nixd nixpkgs-fmt pkg-config ];
     home.sessionVariables = {
-      LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [ pkgs.gcc-unwrapped ];
+      # Hyprland fails to find gcc with this env variable
+      #LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [ pkgs.gcc-unwrapped ];
     };
     # VS Code on Wayland has issues, make sure to set the title bar to custom
     # https://github.com/microsoft/vscode/issues/181533

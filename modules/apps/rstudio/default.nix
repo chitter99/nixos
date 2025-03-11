@@ -24,6 +24,7 @@ let
       ggplot2
       kableExtra
       shiny
+      car
     ];
   };
 in {

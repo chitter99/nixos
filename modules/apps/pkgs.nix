@@ -12,6 +12,7 @@
       transmission_4-qt
       quickemu
       vlc
+      anki
     ];
   };
   services.teamviewer.enable = true;
