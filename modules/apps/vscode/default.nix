@@ -45,7 +45,7 @@
       };
       extensions =
         with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion
-          "1.92.1").vscode-marketplace; [
+          "1.98.0").vscode-marketplace; [
             #extensions = with nix-vscode-extensions.extensions."${system}".vscode-marketplace; [
             # Tools
             rubymaniac.vscode-direnv
@@ -62,7 +62,7 @@
             james-yu.latex-workshop
             #nomicfoundation.hardhat-solidity
             juanblanco.solidity
-            bmewburn.vscode-intelephense-client
+            #bmewburn.vscode-intelephense-client
             # Theme
             monokai.theme-monokai-pro-vscode
           ];

@@ -19,5 +19,6 @@
     ./pgadmin
     ./pkgs.dev.nix
     ./pkgs.nix
+    ./nh
   ];
 }

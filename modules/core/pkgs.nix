@@ -1,8 +1,5 @@
 { pkgs, username, ... }: {
-  home-manager.users.${username} = { ... }: {
-    programs.git.enable = true;
-    programs.vim.enable = true;
-  };
+  home-manager.users.${username} = { ... }: { programs.git.enable = true; };
 
   programs = {
     htop.enable = true;
