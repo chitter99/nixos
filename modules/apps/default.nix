@@ -20,5 +20,6 @@
     ./pkgs.dev.nix
     ./pkgs.nix
     ./nh
+    ./gaming
   ];
 }

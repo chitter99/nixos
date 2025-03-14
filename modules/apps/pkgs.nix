@@ -17,5 +17,4 @@
   };
   services.teamviewer.enable = true;
   services.transmission.enable = true;
-  programs = { steam.enable = true; };
 }
