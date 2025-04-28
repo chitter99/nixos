@@ -4,6 +4,8 @@
       ".ssh/config".text = ''
         Host *
           IdentityAgent ~/.1password/agent.sock
+
+        Include ~/.ssh/1Password/config
       '';
       ".config/1Password/ssh/agent.toml".text = ''
         [[ssh-keys]]
