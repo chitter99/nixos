@@ -4,7 +4,7 @@
   home-manager.users.${username} = { ... }: {
     home.shellAliases = {
       nrso = "sudo nixos-rebuild switch --flake ~/git/nixos#${hostname}";
-      nrs = "nh os switch ~/git/nixos#${hostname}";
+      nrs = "nh os switch -H ${hostname} ~/git/nixos";
     };
   };
 }
