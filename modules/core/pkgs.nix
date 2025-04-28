@@ -25,6 +25,7 @@
     wget
     vim
     nfs-utils
+    webex
 
     # Mics
     glxinfo
