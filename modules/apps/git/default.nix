@@ -6,5 +6,5 @@
       userName = "Aaron Schmid";
     };
   };
-  environment.systemPackages = with pkgs; [ git ];
+  environment.systemPackages = with pkgs; [ git git-lfs ];
 }
