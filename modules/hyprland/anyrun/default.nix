@@ -3,6 +3,8 @@
     [ anyrun-with-all-plugins ];
 
   home-manager.users.${username} = { ... }: {
+    imports = [ anyrun.homeManagerModules.default ];
+
     programs.anyrun = {
       enable = true;
       config = {
