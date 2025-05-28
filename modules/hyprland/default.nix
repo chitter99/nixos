@@ -1,5 +1,5 @@
 { pkgs, username, ... }: {
-  imports = [ ./hypr ./mako ./waybar ./wofi ./greetd.nix ];
+  imports = [ ./hypr ./mako ./waybar ./wofi ./greetd.nix ./anyrun ];
 
   xdg = { portal = { enable = true; }; };
 
