@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, system, ... }: {
+{ anyrun, home-manager, username, system, ... }: {
   environment.systemPackages = with anyrun.packages.${system};
     [ anyrun-with-all-plugins ];
 
