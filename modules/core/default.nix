@@ -43,7 +43,16 @@
 
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [ icu zlib libunwind openssl curl libuuid ];
+    libraries = with pkgs; [
+      icu70 # or try icu72, see below
+      stdenv.cc.cc.lib
+      icu
+      zlib
+      libunwind
+      openssl
+      curl
+      libuuid
+    ];
   };
 
   # Dont change.

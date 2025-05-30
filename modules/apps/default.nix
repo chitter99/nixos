@@ -21,5 +21,6 @@
     ./pkgs.nix
     ./nh
     ./gaming
+    ./tmux
   ];
 }
