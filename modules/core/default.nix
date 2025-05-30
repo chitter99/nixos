@@ -41,6 +41,11 @@
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [ icu zlib libunwind openssl curl libuuid ];
+  };
+
   # Dont change.
   system.stateVersion = "23.05"; # Did you read the comment?
 }

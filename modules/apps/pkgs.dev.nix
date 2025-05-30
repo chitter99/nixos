@@ -9,7 +9,6 @@
       nim
       nix-prefetch-git
       nodejs_20
-      powershell
       postgresql_15
       python312
       zig
@@ -23,6 +22,8 @@
       jq
       netcat-gnu
       dig
+      azuredatastudio
+      neo4j-desktop
     ];
   };
 }

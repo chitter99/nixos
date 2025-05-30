@@ -7,14 +7,12 @@
       "https://nix-community.cachix.org"
       "https://nixpkgs-python.cachix.org"
       "https://devenv.cachix.org"
-      "https://anyrun.cachix.org"
     ];
     extra-trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "nixpkgs-python.cachix.org-1:hxjI7pFxTyuTHn2NkvWCrAUcNZLNS3ZAvfYNuYifcEU="
       "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-      "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
     ];
     extra-experimental-features = "nix-command flakes";
     trusted-users = ''
@@ -34,6 +32,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    #anyrun = {
+    #  url = "github:anyrun-org/anyrun";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
   outputs = args: import ./outputs.nix args;
 }

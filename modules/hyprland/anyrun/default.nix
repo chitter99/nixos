@@ -1,23 +1,24 @@
-{ anyrun, home-manager, username, system, ... }: {
-  environment.systemPackages = with anyrun.packages.${system};
-    [ anyrun-with-all-plugins ];
-
+{ pkgs, username, system, ... }: {
   home-manager.users.${username} = { ... }: {
-    imports = [ anyrun.homeManagerModules.default ];
-
     programs.anyrun = {
       enable = true;
       config = {
-        x = { fraction = 0.5; };
-        y = { fraction = 0.3; };
-        width = { fraction = 0.3; };
-        hideIcons = false;
-        ignoreExclusiveZones = false;
+
+        width = { fraction = 0.5; };
+        hidePluginInfo = true;
         layer = "overlay";
-        hidePluginInfo = false;
-        closeOnClick = false;
-        showResultsImmediately = false;
-        maxEntries = null;
+
+        closeOnClick = true;
+
+        plugins = [
+          "${pkgs.anyrun}/lib/libapplications.so"
+          "${pkgs.anyrun}/lib/libkidex.so"
+          "${pkgs.anyrun}/lib/librink.so"
+          "${pkgs.anyrun}/lib/libshell.so"
+          "${pkgs.anyrun}/lib/libsymbols.so"
+          "${pkgs.anyrun}/lib/libtranslate.so"
+          "${pkgs.anyrun}/lib/libwebsearch.so"
+        ];
       };
 
       # Inline comments are supported for language injection into

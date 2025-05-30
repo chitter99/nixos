@@ -1,11 +1,6 @@
 { pkgs, home-manager, username, ... }: {
   home-manager.users.${username} = { pkgs, ... }: {
     home.sessionVariables = { MOZ_ENABLE_WAYLAND = 1; };
-
-    programs = {
-      chromium.enable = true;
-      firefox.enable = true;
-    };
   };
   programs = {
     chromium = {
@@ -20,9 +15,9 @@
       extensions = [
         "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
         "aeblfdkhhhdcdjpifhhbdiojplfjncoa" # 1password
+        "dbepggeogbaibhgnhhndojpepiihcmeb" # vimium
       ];
     };
-    firefox = { enable = true; };
   };
   environment.systemPackages = with pkgs; [ brave ];
 }
