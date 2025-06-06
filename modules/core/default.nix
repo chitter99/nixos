@@ -52,8 +52,11 @@
       openssl
       curl
       libuuid
+      krb5
     ];
   };
+
+  services.onedrive.enable = true;
 
   # Dont change.
   system.stateVersion = "23.05"; # Did you read the comment?

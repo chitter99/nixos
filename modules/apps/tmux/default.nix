@@ -16,10 +16,10 @@
             set -g @continuum-save-interval '60' # minutes
           '';
         }
-        {
-          plugin = tmux-super-fingers;
-          extraConfig = "set -g @super-fingers-key f";
-        }
+        # {
+        #   plugin = tmuxPlugins.tmux-super-fingers;
+        #   extraConfig = "set -g @super-fingers-key f";
+        # }
         tmuxPlugins.better-mouse-mode
       ];
       extraConfig = ''
