@@ -56,6 +56,14 @@
     ];
   };
 
+  # unixODBC
+  environment.systemPackages = with pkgs; [ unixODBC ];
+  environment.unixODBCDrivers = with pkgs.unixODBCDrivers; [
+    sqlite
+    psql
+    msodbcsql18
+  ];
+
   services.onedrive.enable = true;
 
   # Dont change.

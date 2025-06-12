@@ -22,5 +22,6 @@
     ./nh
     ./gaming
     ./tmux
+    ./ollama
   ];
 }
