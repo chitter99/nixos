@@ -13,6 +13,7 @@
       quickemu
       vlc
       anki
+      gimp3
     ];
   };
   services.teamviewer.enable = true;
