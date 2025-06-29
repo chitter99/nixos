@@ -10,6 +10,7 @@
     [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
