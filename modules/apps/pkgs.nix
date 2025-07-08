@@ -14,6 +14,7 @@
       vlc
       anki
       gimp3
+      zotero
     ];
   };
   services.teamviewer.enable = true;

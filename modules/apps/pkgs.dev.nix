@@ -24,6 +24,7 @@
       dig
       azuredatastudio
       neo4j-desktop
+      pgadmin4
     ];
   };
 }

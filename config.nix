@@ -14,15 +14,14 @@ in {
       };
       modules = [ nixos-hardware.nixosModules.framework-13-7040-amd ];
     };
-    achilles = {
+    gaia = {
       inherit system;
       inherit username;
-      options = { nvidia = true; };
-    };
-    test = {
-      inherit system;
-      inherit username;
-      options = { nvidia = false; };
+      options = {
+        nvidia = false;
+        powersave = true;
+        theme = "aurora";
+      };
     };
   };
 }

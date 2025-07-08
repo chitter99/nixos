@@ -66,6 +66,8 @@
 
   services.onedrive.enable = true;
 
+  services.fwupd.enable = true;
+
   # Dont change.
   system.stateVersion = "23.05"; # Did you read the comment?
 }
