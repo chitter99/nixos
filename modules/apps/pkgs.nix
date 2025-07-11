@@ -15,6 +15,7 @@
       anki
       gimp3
       zotero
+      todoist-electron
     ];
   };
   services.teamviewer.enable = true;
