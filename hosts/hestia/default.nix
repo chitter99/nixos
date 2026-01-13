@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ pkgs, lib, ... }: {
   imports = [ ./hardware-configuration.nix ];
 
   # Override auto-cpufreq options
@@ -19,6 +19,10 @@
   # Framework amd 13inch specific hardware patches
   services.fwupd.enable = true;
   #hardware.framework.amd-7040.preventWakeOnAC = true;
+
+  # AMD integrated gpu
+  hardware.opengl.extraPackages = with pkgs; [ amdvlk ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   console.keyMap = lib.mkForce "us";
 }

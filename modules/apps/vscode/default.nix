@@ -42,6 +42,18 @@
             };
           };
         };
+        #### ZHAW
+        "remote.SSH.serverInstallPath" = {
+          "losangeles.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+          "sanfrancisco.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+          "sandiego.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+          "sacramento.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+          "sanjose.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+          "fresko.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+          "trinity.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+          "honolulu.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+          "hilo.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
+        };
       };
       extensions =
         with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion

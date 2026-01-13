@@ -16,8 +16,14 @@
       gimp3
       zotero
       todoist-electron
+      networkmanagerapplet
+      xournalpp
+      gephi
+      hexchat
+      lmstudio
     ];
   };
   services.teamviewer.enable = true;
   services.transmission.enable = true;
+  environment.systemPackages = [ pkgs.wireguard-tools ];
 }

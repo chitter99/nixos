@@ -53,6 +53,46 @@
       curl
       libuuid
       krb5
+      zstd
+      glib
+      libGL
+      libsForQt5.qt5.qtbase
+      qt5.full
+      qtcreator
+      dbus
+      fontconfig
+      freetype
+      libxkbcommon
+      wayland
+      nss
+      nspr
+
+      # Qt / WebEngine / Qt infrastructure
+      qt6.qtbase # Qt base framework
+      qt6.full
+      qt6.qtwayland
+      qt6.qtwebengine # WebEngine module
+      qt6.qtwebchannel # WebChannel (JS <-> C++)
+
+      # Optionally, include a broader X11 set
+      xorg.libX11
+      xorg.libxcb
+      xorg.xcbutilcursor
+      xorg.libXext
+      xorg.libXcursor
+      xorg.libXrandr
+      xorg.libXrender
+      xorg.libXdamage
+      xorg.libXcomposite
+      xorg.libXfixes
+      xorg.libXtst
+      xorg.libXi
+      xorg.libxshmfence
+      xorg.libxkbfile
+      libdrm
+      alsa-lib
+      libgbm
+
     ];
   };
 

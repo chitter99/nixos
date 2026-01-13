@@ -20,6 +20,7 @@
 
     # Utils
     ripgrep
+    zip
     unzip
     p7zip
     wget
