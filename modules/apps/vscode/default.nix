@@ -11,9 +11,9 @@
     programs.vscode = {
       enable = true;
       mutableExtensionsDir = true;
-      enableUpdateCheck = false;
-      enableExtensionUpdateCheck = false;
-      userSettings = {
+      profiles.default.enableUpdateCheck = false;
+      profiles.default.enableExtensionUpdateCheck = false;
+      profiles.default.userSettings = {
         "window.titleBarStyle" = "custom";
         "workbench.colorTheme" = "Monokai Pro (Filter Machine)";
         #"workbench.iconTheme" = "Monokai Pro (Filter Machine) Icons";
@@ -55,7 +55,7 @@
           "hilo.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
         };
       };
-      extensions =
+      profiles.default.extensions =
         with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion
           "1.107.1").vscode-marketplace; [
             #extensions = with nix-vscode-extensions.extensions."${system}".vscode-marketplace; [

@@ -22,14 +22,13 @@ in let
     in {
       name = hostname;
       value = nixpkgs.lib.nixosSystem {
-        inherit system;
         specialArgs = {
           inherit system;
           inherit hostname;
           inherit username;
           inherit hostOptions;
         } // inputs;
-        modules = [ ./. ] ++ extraModules;
+        modules = [ ./. { nixpkgs.hostPlatform = system; } ] ++ extraModules;
       };
     }) (builtins.attrNames config.hosts);
 in { nixosConfigurations = builtins.listToAttrs hosts; }
