@@ -27,12 +27,12 @@
       netcat-gnu
       dig
       azuredatastudio
-      neo4j-desktop
       pgadmin4
       dbeaver-bin
       speedtest-cli
       openvpn3
       openvpn
+      claude-code
     ];
   };
 }

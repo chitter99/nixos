@@ -8,8 +8,6 @@
       gephi
       yubikey-manager
       spotify
-      hexchat
-      transmission_4-qt
       quickemu
       vlc
       anki
@@ -19,11 +17,11 @@
       networkmanagerapplet
       xournalpp
       gephi
-      hexchat
       lmstudio
+      beeper
     ];
   };
   services.teamviewer.enable = true;
-  services.transmission.enable = true;
+  #services.transmission.enable = true;
   environment.systemPackages = [ pkgs.wireguard-tools ];
 }

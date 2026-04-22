@@ -57,7 +57,7 @@
       };
       extensions =
         with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion
-          "1.98.0").vscode-marketplace; [
+          "1.107.1").vscode-marketplace; [
             #extensions = with nix-vscode-extensions.extensions."${system}".vscode-marketplace; [
             # Tools
             rubymaniac.vscode-direnv

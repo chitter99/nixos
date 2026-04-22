@@ -56,8 +56,8 @@
       zstd
       glib
       libGL
-      libsForQt5.qt5.qtbase
-      qt5.full
+      #libsForQt5.qt5.qtbase
+      #qt5.full
       qtcreator
       dbus
       fontconfig
@@ -69,7 +69,7 @@
 
       # Qt / WebEngine / Qt infrastructure
       qt6.qtbase # Qt base framework
-      qt6.full
+      #qt6.full
       qt6.qtwayland
       qt6.qtwebengine # WebEngine module
       qt6.qtwebchannel # WebChannel (JS <-> C++)

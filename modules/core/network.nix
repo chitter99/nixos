@@ -9,7 +9,7 @@
     networkmanager = {
       enable = true;
       plugins = [ pkgs.networkmanager-openconnect ];
-      dns = "default";
+      dns = "systemd-resolved";
     };
     hostName = "${hostname}";
     firewall = {
@@ -30,17 +30,11 @@
     nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
   };
 
-  # services.resolved = {
-  #   enable = true;
-  #   fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
-  #   dnsovertls = "true";
-  #   extraConfig = ''
-  #     [Resolve]
-  #     DNSStubListener=yes
-  #     DNSStubListenerExtra=127.0.0.53
-  #     Domains=~zhaw.ch
-  #   '';
-  # };
+  services.resolved = {
+    enable = true;
+    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    dnsovertls = "true";
+  };
 
   users.users.${username} = { extraGroups = [ "networkmanager" ]; };
 }

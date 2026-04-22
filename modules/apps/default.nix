@@ -14,7 +14,7 @@
     ./openvpn
     ./wine
     ./gnome
-    ./neovim
+    #./neovim
     ./tailscale
     #./pgadmin
     ./pkgs.dev.nix

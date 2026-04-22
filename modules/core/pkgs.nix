@@ -29,7 +29,7 @@
     webex
 
     # Mics
-    glxinfo
+    mesa-demos
     exfat
     btop
     nitch
