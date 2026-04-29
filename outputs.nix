@@ -33,4 +33,10 @@ in let
         modules = [ ./. { nixpkgs.hostPlatform = system; } ] ++ extraModules;
       };
     }) (builtins.attrNames config.hosts);
-in { nixosConfigurations = builtins.listToAttrs hosts; }
+in let nixosConfigurations = builtins.listToAttrs hosts;
+in {
+  inherit nixosConfigurations;
+  checks.x86_64-linux =
+    builtins.mapAttrs (_: cfg: cfg.config.system.build.toplevel)
+    nixosConfigurations;
+}

@@ -9,6 +9,7 @@
     ./security.nix
     ./virt.nix
     ./xdg.nix
+    ./update-notifier.nix
   ] ++ (if hostOptions.powersave then [ ./powersave.nix ] else [ ]);
 
   # Enable Flakes and nix-commands
