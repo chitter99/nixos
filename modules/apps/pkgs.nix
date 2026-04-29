@@ -1,14 +1,14 @@
-{ pkgs, home-manager, username, ... }: {
+{ pkgs, pkgs-unstable, home-manager, username, ... }: {
   home-manager.users.${username} = { pkgs, ... }: {
     home.packages = with pkgs; [
       discord
       libreoffice-qt
-      texliveFull
+      texliveSmall
       thunderbird
       gephi
       yubikey-manager
       spotify
-      quickemu
+      #quickemu
       vlc
       anki
       gimp3
@@ -16,9 +16,9 @@
       todoist-electron
       networkmanagerapplet
       xournalpp
-      gephi
-      lmstudio
-      beeper
+      kdePackages.okular
+      #pkgs-unstable.lmstudio # pinned-unstable: AI tool, rapid updates — revisit on nixos-25.11
+      pkgs-unstable.beeper # pinned-unstable: chat client, version-sensitive — revisit on nixos-25.11
     ];
   };
   services.teamviewer.enable = true;

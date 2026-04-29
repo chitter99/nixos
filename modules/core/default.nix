@@ -20,6 +20,7 @@
     nixpkgs.config.allowUnfree = true;
   };
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [ "electron-38.8.4" ];
 
   # Localization
   time.timeZone = "Europe/Zurich";
@@ -67,12 +68,9 @@
       nss
       nspr
 
-      # Qt / WebEngine / Qt infrastructure
-      qt6.qtbase # Qt base framework
-      #qt6.full
+      # Qt infrastructure
+      qt6.qtbase
       qt6.qtwayland
-      qt6.qtwebengine # WebEngine module
-      qt6.qtwebchannel # WebChannel (JS <-> C++)
 
       # Optionally, include a broader X11 set
       xorg.libX11

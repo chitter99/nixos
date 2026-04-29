@@ -1,4 +1,4 @@
-{ pkgs, home-manager, username, ... }: {
+{ pkgs, pkgs-unstable, home-manager, username, ... }: {
   home-manager.users.${username} = { pkgs, ... }: {
     # TODO: Remove, bad bad bad
     home.sessionPath = [ "/home/arsch/.local/bin" ];
@@ -18,7 +18,7 @@
       zig
       mysql-workbench
       mysql80
-      mongodb-compass
+      # mongodb-compass
       bruno
       robo3t
       filezilla
@@ -26,13 +26,13 @@
       jq
       netcat-gnu
       dig
-      azuredatastudio
+      # azuredatastudio
       pgadmin4
       dbeaver-bin
       speedtest-cli
       openvpn3
       openvpn
-      claude-code
+      pkgs-unstable.claude-code # pinned-unstable: recent addition, needs latest — revisit on nixos-25.11
     ];
   };
 }

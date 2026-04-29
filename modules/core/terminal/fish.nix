@@ -7,11 +7,7 @@
       shellInit = ''
         direnv hook fish | source
 
-        # Here would be the place for op/plugin.sh
         set -g fish_greeting
-
-        # use 1password ssh-agent
-        set -Ux SSH_AUTH_SOCK ~/.1password/agent.sock
       '';
     };
   };

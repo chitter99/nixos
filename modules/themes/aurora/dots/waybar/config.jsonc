@@ -18,7 +18,8 @@
 
     "cpu",
     "battery",
-    "clock"
+    "clock",
+    "tray"
   ],
 
   // --- Modules configuration ---

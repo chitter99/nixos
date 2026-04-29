@@ -1,11 +1,16 @@
-{ pkgs, username, ... }: {
-  programs.hyprland.enable = true;
+{ pkgs-unstable, username, ... }: {
+  programs.hyprland = {
+    enable = true;
+    package =
+      pkgs-unstable.hyprland; # pinned-unstable: fast-moving compositor — revisit on nixos-25.11
+    portalPackage = pkgs-unstable.xdg-desktop-portal-hyprland;
+  };
 
-  environment.systemPackages = with pkgs; [
-    hyprpicker
-    hypridle
-    hyprlock
-    hyprpaper
+  environment.systemPackages = [
+    pkgs-unstable.hyprpicker # pinned-unstable: must match hyprland version
+    pkgs-unstable.hypridle # pinned-unstable: must match hyprland version
+    pkgs-unstable.hyprlock # pinned-unstable: must match hyprland version
+    pkgs-unstable.hyprpaper # pinned-unstable: must match hyprland version
   ];
 
   home-manager.users.${username} = { ... }: {
@@ -17,4 +22,3 @@
     };
   };
 }
-

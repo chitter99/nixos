@@ -1,5 +1,6 @@
 { pkgs, home-manager, username, ... }: {
   home-manager.users.${username} = { pkgs, ... }: {
+    home.sessionVariables.SSH_AUTH_SOCK = "$HOME/.1password/agent.sock";
     home.file = {
       ".ssh/config".text = ''
         Host *

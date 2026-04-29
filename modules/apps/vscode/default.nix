@@ -1,4 +1,11 @@
-{ pkgs, home-manager, username, system, nix-vscode-extensions, ... }: {
+{ pkgs, pkgs-unstable, home-manager, username, system, nix-vscode-extensions
+, ... }:
+let
+  vscodePackage = pkgs-unstable.vscode;
+  vscodeExtensions =
+    nix-vscode-extensions.extensions."${system}".forVSCodeVersion
+    vscodePackage.version;
+in {
   home-manager.users.${username} = { pkgs, ... }: {
     # Jupiter notebook fix
     home.packages = with pkgs; [ gcc-unwrapped nixd nixpkgs-fmt pkg-config ];
@@ -10,6 +17,8 @@
     # https://github.com/microsoft/vscode/issues/181533
     programs.vscode = {
       enable = true;
+      package =
+        vscodePackage; # pinned-unstable: fast-moving IDE, extensions need latest — revisit on nixos-25.11
       mutableExtensionsDir = true;
       profiles.default.enableUpdateCheck = false;
       profiles.default.enableExtensionUpdateCheck = false;
@@ -55,29 +64,26 @@
           "hilo.zhaw.ch" = "/raid/persistent_scratch/schmiaa2/";
         };
       };
-      profiles.default.extensions =
-        with (nix-vscode-extensions.extensions."${system}".forVSCodeVersion
-          "1.107.1").vscode-marketplace; [
-            #extensions = with nix-vscode-extensions.extensions."${system}".vscode-marketplace; [
-            # Tools
-            rubymaniac.vscode-direnv
-            esbenp.prettier-vscode
-            # LSP
-            jnoortheen.nix-ide
-            ms-python.python
-            ms-python.debugpy
-            rust-lang.rust-analyzer
-            prisma.prisma
-            hashicorp.terraform
-            #ms-toolsai.jupyter
-            reditorsupport.r
-            james-yu.latex-workshop
-            #nomicfoundation.hardhat-solidity
-            juanblanco.solidity
-            #bmewburn.vscode-intelephense-client
-            # Theme
-            monokai.theme-monokai-pro-vscode
-          ];
+      profiles.default.extensions = with vscodeExtensions.vscode-marketplace; [
+        # Tools
+        rubymaniac.vscode-direnv
+        esbenp.prettier-vscode
+        # LSP
+        jnoortheen.nix-ide
+        ms-python.python
+        ms-python.debugpy
+        rust-lang.rust-analyzer
+        prisma.prisma
+        hashicorp.terraform
+        #ms-toolsai.jupyter
+        reditorsupport.r
+        james-yu.latex-workshop
+        #nomicfoundation.hardhat-solidity
+        juanblanco.solidity
+        #bmewburn.vscode-intelephense-client
+        # Theme
+        monokai.theme-monokai-pro-vscode
+      ];
     };
   };
 }

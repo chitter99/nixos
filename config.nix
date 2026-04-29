@@ -23,5 +23,14 @@ in {
         theme = "aurora";
       };
     };
+    titan = {
+      inherit system;
+      inherit username;
+      options = {
+        nvidia = true;
+        powersave = false;
+        theme = "aurora";
+      };
+    };
   };
 }

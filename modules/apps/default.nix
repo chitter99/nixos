@@ -7,10 +7,8 @@
     ./helix
     ./ledger
     ./git
-    ./nixgl
     ./obsidian
     ./rstudio
-    ./docker
     ./openvpn
     ./wine
     ./gnome
