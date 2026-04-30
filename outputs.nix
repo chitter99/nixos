@@ -36,6 +36,7 @@ in let
 in let nixosConfigurations = builtins.listToAttrs hosts;
 in {
   inherit nixosConfigurations;
+  formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
   checks.x86_64-linux =
     builtins.mapAttrs (_: cfg: cfg.config.system.build.toplevel)
     nixosConfigurations;
