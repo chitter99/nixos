@@ -2,7 +2,8 @@
 let
   system = "x86_64-linux";
   username = "arsch";
-in {
+in
+{
   hosts = {
     hestia = {
       inherit system;

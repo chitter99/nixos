@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.pgadmin = {
     enable = true;
     initialPasswordFile = ./initial-pgadmin-pass;
@@ -6,4 +7,3 @@
     emailServer.enable = false;
   };
 }
-

@@ -20,7 +20,8 @@ let
         "New config (CI green) on main. Run: nh os switch"
     fi
   '';
-in {
+in
+{
   systemd.user.services.nixos-update-check = {
     description = "Check for NixOS config updates";
     serviceConfig = {

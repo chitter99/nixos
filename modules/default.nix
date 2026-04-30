@@ -1,1 +1,11 @@
-{ ... }: { imports = [ ./apps ./core ./hardware ./hyprland ./themes ./home ]; }
+{ ... }:
+{
+  imports = [
+    ./apps
+    ./core
+    ./hardware
+    ./hyprland
+    ./themes
+    ./home
+  ];
+}

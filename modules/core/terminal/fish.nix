@@ -1,6 +1,14 @@
-{ pkgs, home-manager, username, ... }: {
+{
+  pkgs,
+  home-manager,
+  username,
+  ...
+}:
+{
   home-manager.users.${username} = {
-    programs.bash = { enable = true; };
+    programs.bash = {
+      enable = true;
+    };
 
     programs.fish = {
       enable = true;

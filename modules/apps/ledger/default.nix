@@ -1,4 +1,10 @@
-{ pkgs, home-manager, username, ... }: {
+{
+  pkgs,
+  home-manager,
+  username,
+  ...
+}:
+{
   users.users."${username}".extraGroups = [ "plugdev" ];
   # Required for Ledger Live to detect Ledger Nano S via USB
   # Fetch latest version from https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh

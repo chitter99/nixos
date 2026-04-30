@@ -1,10 +1,23 @@
-{ pkgs, home-manager, username, hostname, ... }: {
-  imports = [ ./fish.nix ./kitty.nix ./starship.nix ];
+{
+  pkgs,
+  home-manager,
+  username,
+  hostname,
+  ...
+}:
+{
+  imports = [
+    ./fish.nix
+    ./kitty.nix
+    ./starship.nix
+  ];
 
-  home-manager.users.${username} = { ... }: {
-    home.shellAliases = {
-      nrso = "sudo nixos-rebuild switch --flake ~/git/nixos#${hostname}";
-      nrs = "nh os switch -H ${hostname} ~/git/nixos";
+  home-manager.users.${username} =
+    { ... }:
+    {
+      home.shellAliases = {
+        nrso = "sudo nixos-rebuild switch --flake ~/git/nixos#${hostname}";
+        nrs = "nh os switch -H ${hostname} ~/git/nixos";
+      };
     };
-  };
 }

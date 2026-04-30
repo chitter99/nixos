@@ -1,1 +1,4 @@
-{ lib, ... }: { console.keyMap = lib.mkForce "us"; }
+{ lib, ... }:
+{
+  console.keyMap = lib.mkForce "us";
+}

@@ -1,5 +1,10 @@
-{ pkgs, username, ... }: {
-  home-manager.users.${username} = { ... }: { programs.git.enable = true; };
+{ pkgs, username, ... }:
+{
+  home-manager.users.${username} =
+    { ... }:
+    {
+      programs.git.enable = true;
+    };
 
   programs = {
     htop.enable = true;

@@ -1,4 +1,5 @@
-{ nixvim, username, ... }: {
+{ nixvim, username, ... }:
+{
   home-manager.users.${username} = {
     imports = [
       nixvim.homeManagerModules.nixvim

@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   quarto = pkgs.vimUtils.buildVimPlugin {
     pname = "quarto-nvim";
@@ -12,12 +17,13 @@ let
       sha256 = "JRRwiY69GSIUSPslvVDL5VRZdtnYeZ2smyAw2ysu5B4=";
     };
   };
-in {
+in
+{
   programs.nixvim = {
     extraLuaPackages = ps: [ ps.magick ];
     extraPackages = with pkgs; [ imagemagick ];
-    extraPython3Packages = p:
-      with p; [
+    extraPython3Packages =
+      p: with p; [
         pynvim
         jupyter-client
         cairosvg
@@ -30,9 +36,13 @@ in {
     plugins = {
       molten = {
         enable = true;
-        settings = { image_provider = "image.nvim"; };
+        settings = {
+          image_provider = "image.nvim";
+        };
       };
-      image = { enable = true; };
+      image = {
+        enable = true;
+      };
       jupytext = {
         enable = true;
         settings = {
@@ -42,21 +52,25 @@ in {
         };
       };
     };
-    keymaps = let
-      normal = lib.mapAttrsToList (key: action: {
-        mode = "n";
-        inherit action key;
-      }) {
-        "<localleader>mi" = ":MoltenInit<CR>";
-        "<localleader>e" = ":MoltenEvaluateOperator<CR>";
-        "<localleader>rl" = ":MoltenEvaluateLine<CR>";
-        "<localleader>rr" = ":MoltenReevaluateCell<CR>";
-        "<localleader>r" = ":<C-u>MoltenEvaluateVisual<CR>gv";
-        "<localleader>rd" = ":MoltenDelete<CR>";
-        "<localleader>oh" = ":MoltenHideOutput<CR>";
-        "<localleader>os" = ":noautocmd MoltenEnterOutput<CR>";
-      };
-    in config.nixvim.helpers.keymaps.mkKeymaps { options.silent = true; }
-    (normal);
+    keymaps =
+      let
+        normal =
+          lib.mapAttrsToList
+            (key: action: {
+              mode = "n";
+              inherit action key;
+            })
+            {
+              "<localleader>mi" = ":MoltenInit<CR>";
+              "<localleader>e" = ":MoltenEvaluateOperator<CR>";
+              "<localleader>rl" = ":MoltenEvaluateLine<CR>";
+              "<localleader>rr" = ":MoltenReevaluateCell<CR>";
+              "<localleader>r" = ":<C-u>MoltenEvaluateVisual<CR>gv";
+              "<localleader>rd" = ":MoltenDelete<CR>";
+              "<localleader>oh" = ":MoltenHideOutput<CR>";
+              "<localleader>os" = ":noautocmd MoltenEnterOutput<CR>";
+            };
+      in
+      config.nixvim.helpers.keymaps.mkKeymaps { options.silent = true; } (normal);
   };
 }

@@ -1,4 +1,10 @@
-{ pkgs, username, hostname, ... }: {
+{
+  pkgs,
+  username,
+  hostname,
+  ...
+}:
+{
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -14,8 +20,18 @@
     hostName = "${hostname}";
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 80 443 9090 3000 502 501 ];
-      allowedUDPPorts = [ 1198 1197 ];
+      allowedTCPPorts = [
+        80
+        443
+        9090
+        3000
+        502
+        501
+      ];
+      allowedUDPPorts = [
+        1198
+        1197
+      ];
       allowedUDPPortRanges = [
         {
           from = 4000;
@@ -27,14 +43,22 @@
         }
       ];
     };
-    nameservers = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    nameservers = [
+      "1.1.1.1#one.one.one.one"
+      "1.0.0.1#one.one.one.one"
+    ];
   };
 
   services.resolved = {
     enable = true;
-    fallbackDns = [ "1.1.1.1#one.one.one.one" "1.0.0.1#one.one.one.one" ];
+    fallbackDns = [
+      "1.1.1.1#one.one.one.one"
+      "1.0.0.1#one.one.one.one"
+    ];
     dnsovertls = "true";
   };
 
-  users.users.${username} = { extraGroups = [ "networkmanager" ]; };
+  users.users.${username} = {
+    extraGroups = [ "networkmanager" ];
+  };
 }

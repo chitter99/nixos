@@ -1,10 +1,13 @@
-{ home-manager, username, ... }: {
-  home-manager.users.${username} = { ... }: {
-    home.file = {
-      ".config/backgrounds" = {
-        source = ./backgrounds;
-        recursive = true;
+{ home-manager, username, ... }:
+{
+  home-manager.users.${username} =
+    { ... }:
+    {
+      home.file = {
+        ".config/backgrounds" = {
+          source = ./backgrounds;
+          recursive = true;
+        };
       };
     };
-  };
 }

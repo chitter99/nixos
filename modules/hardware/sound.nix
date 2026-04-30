@@ -1,5 +1,8 @@
-{ username, ... }: {
-  users.users.${username} = { extraGroups = [ "audio" ]; };
+{ username, ... }:
+{
+  users.users.${username} = {
+    extraGroups = [ "audio" ];
+  };
 
   security.rtkit.enable = true;
   services.pipewire = {

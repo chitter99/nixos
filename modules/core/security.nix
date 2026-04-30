@@ -1,5 +1,8 @@
-{ pkgs, username, ... }: {
-  services.gnome = { gnome-keyring.enable = true; };
+{ pkgs, username, ... }:
+{
+  services.gnome = {
+    gnome-keyring.enable = true;
+  };
 
   security = {
     pam = {
@@ -13,7 +16,8 @@
     polkit.enable = true;
   };
   services.udev.packages = [ pkgs.yubikey-personalization ];
-  services.fprintd = { enable = false; };
+  services.fprintd = {
+    enable = false;
+  };
   programs.gnupg.agent.enable = true;
 }
-

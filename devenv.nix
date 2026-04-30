@@ -1,4 +1,11 @@
-{ pkgs, lib, config, inputs, ... }: {
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
+{
   languages.nix.enable = true;
-  pre-commit.hooks.nixfmt.enable = true;
+  git-hooks.hooks.nixfmt-rfc-style.enable = true;
 }
