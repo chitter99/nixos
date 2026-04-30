@@ -22,7 +22,7 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Check formatting
-        run: nix fmt -- --check
+        run: nix fmt -- --ci
 
       - name: Build and check all hosts
         run: nix flake check
